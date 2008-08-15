@@ -156,6 +156,7 @@ void setup()
     for(i=0; i<TOTAL_DIGITAL_PINS; ++i) {
         setPinModeCallback(i,OUTPUT);
     }
+    // TODO rethink the init, perhaps it should report analog on default
     for(i=0; i<TOTAL_PORTS; ++i) {
         reportPINs[i] = false;
     }
