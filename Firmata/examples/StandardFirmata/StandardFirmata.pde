@@ -18,12 +18,6 @@
 #include <Firmata.h>
 
 /*==============================================================================
- * MACROS
- *============================================================================*/
-
-
-
-/*==============================================================================
  * GLOBAL VARIABLES
  *============================================================================*/
 
@@ -35,6 +29,7 @@ int analogPin = 0; // counter for reading analog pins
 byte reportPINs[TOTAL_PORTS];   // PIN == input port
 byte previousPINs[TOTAL_PORTS]; // PIN == input port
 byte pinStatus[TOTAL_DIGITAL_PINS]; // store pin status, default OUTPUT
+byte portStatus[TOTAL_PORTS];
 
 /* timer variables */
 extern volatile unsigned long timer0_overflow_count; // timer0 from wiring.c
@@ -47,7 +42,8 @@ unsigned long nextExecuteTime; // for comparison with timer0_overflow_count
 
 void outputPort(byte portNumber, byte portValue)
 {
-    if(previousPINs[portNumber] != portValue) {
+  portValue = portValue &~ portStatus[portNumber];
+  if(previousPINs[portNumber] != portValue) {
         Firmata.sendDigitalPort(portNumber, portValue); 
         previousPINs[portNumber] = portValue;
         Firmata.sendDigitalPort(portNumber, portValue); 
@@ -76,15 +72,31 @@ void checkDigitalInputs(void)
  * two bit-arrays that track Digital I/O and PWM status
  */
 void setPinModeCallback(byte pin, int mode) {
+    byte port = 0;
+    byte offset = 0;
+
+    if (pin < 8) {
+      port = 0;
+      offset = 0;
+    } else if (pin < 14) {
+      port = 1;
+      offset = 8;     
+    } else if (pin < 22) {
+      port = 2;
+      offset = 14;
+    }
+
     if(pin > 1) { // ignore RxTx pins (0,1)
         pinStatus[pin] = mode;
         switch(mode) {
         case INPUT:
-        case OUTPUT:
-            pinMode(pin, mode);
+            pinMode(pin, INPUT);
+            portStatus[port] = portStatus[port] &~ (1 << (pin - offset));
             break;
+        case OUTPUT:
         case PWM:
-            pinMode(pin,OUTPUT);
+            pinMode(pin, OUTPUT);
+            portStatus[port] = portStatus[port] | (1 << (pin - offset));
             break;
         default:
             Firmata.sendString("");
@@ -152,6 +164,10 @@ void setup()
     Firmata.attach(REPORT_ANALOG, reportAnalogCallback);
     Firmata.attach(REPORT_DIGITAL, reportDigitalCallback);
     Firmata.attach(SET_PIN_MODE, setPinModeCallback);
+
+    portStatus[0] = B00000011;  // ignore Tx/RX pins
+    portStatus[1] = B11000000;  // ignore 14/15 pins 
+    portStatus[2] = B00000000;
 
     for(i=0; i<TOTAL_DIGITAL_PINS; ++i) {
         setPinModeCallback(i,OUTPUT);
