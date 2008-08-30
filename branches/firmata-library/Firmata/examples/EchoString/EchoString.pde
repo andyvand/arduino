@@ -1,16 +1,6 @@
-/* Copyright (C) 2008 Free Software Foundation.  All rights reserved.
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or (at your option) any later version.
- *
- * See file LICENSE.txt for further informations on licensing terms.
- */
-
 /* This sketch accepts strings and raw sysex messages and echos them back.
  *
- * Written by Hans-Christoph Steiner <hans@eds.org>
+ * This example code is in the public domain.
  */
 #include <Firmata.h>
 
