@@ -1,11 +1,11 @@
 /*
   Firmata.cpp - Firmata library
-  Copyright (c) 2007-2008 Free Software Foundation.  All right reserved.
-
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
+  Copyright (C) 2006-2008 Hans-Christoph Steiner.  All rights reserved.
+ 
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
 
   See file LICENSE.txt for further informations on licensing terms.
 */
@@ -130,8 +130,6 @@ void FirmataClass::setFirmwareNameAndVersion(const char *name, byte major, byte 
 {
     const char *filename;
     char *extension;
-    byte byteCount = strlen(name) + 2;
-
 
 // parse out ".cpp" and "applet/" that comes from using __FILE__
     extension = strstr(name, ".cpp");
