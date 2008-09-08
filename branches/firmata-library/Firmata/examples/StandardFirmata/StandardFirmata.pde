@@ -86,7 +86,7 @@ void setPinModeCallback(byte pin, int mode) {
       offset = 14;
     }
 
-    if(pin > 1) { // ignore RxTx pins (0,1)
+    if(pin > 1) { // ignore RxTx (pins 0 and 1)
         pinStatus[pin] = mode;
         switch(mode) {
         case INPUT:
@@ -98,6 +98,7 @@ void setPinModeCallback(byte pin, int mode) {
             pinMode(pin, OUTPUT);
             portStatus[port] = portStatus[port] | (1 << (pin - offset));
             break;
+        //case ANALOG: // TODO figure this out
         default:
             Firmata.sendString("");
         }
@@ -169,9 +170,15 @@ void setup()
     portStatus[1] = B11000000;  // ignore 14/15 pins 
     portStatus[2] = B00000000;
 
-    for(i=0; i<TOTAL_DIGITAL_PINS; ++i) {
+//    for(i=0; i<TOTAL_DIGITAL_PINS; ++i) { // TODO make this work with analogs
+    for(i=0; i<14; ++i) {
         setPinModeCallback(i,OUTPUT);
     }
+    // set all outputs to 0 to make sure internal pull-up resistors are off
+    PORTB = 0; // pins 8-15
+    PORTC = 0; // analog port
+    PORTD = 0; // pins 0-7
+
     // TODO rethink the init, perhaps it should report analog on default
     for(i=0; i<TOTAL_PORTS; ++i) {
         reportPINs[i] = false;
@@ -209,8 +216,9 @@ void loop()
         /* ANALOGREAD - right after the event character, do all of the
          * analogReads().  These only need to be done every 4ms. */
         for(analogPin=0;analogPin<TOTAL_ANALOG_PINS;analogPin++) {
-            if( analogInputsToReport & (1 << analogPin) ) 
+            if( analogInputsToReport & (1 << analogPin) ) {
                 Firmata.sendAnalog(analogPin, analogRead(analogPin));
+            }
         }
     }
 }
