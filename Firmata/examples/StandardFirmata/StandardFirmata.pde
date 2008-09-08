@@ -94,6 +94,7 @@ void setPinModeCallback(byte pin, int mode) {
             portStatus[port] = portStatus[port] &~ (1 << (pin - offset));
             break;
         case OUTPUT:
+            digitalWrite(pin, LOW); // disable PWM
         case PWM:
             pinMode(pin, OUTPUT);
             portStatus[port] = portStatus[port] | (1 << (pin - offset));
@@ -115,7 +116,7 @@ void analogWriteCallback(byte pin, int value)
 void digitalWriteCallback(byte port, int value)
 {
     switch(port) {
-    case 0: // pins 2-7  (0,1 are serial RX/TX, don't change their values)
+    case 0: // pins 2-7 (don't change Rx/Tx, pins 0 and 1)
         // 0xFF03 == B1111111100000011    0x03 == B00000011
         PORTD = (value &~ 0xFF03) | (PORTD & 0x03);
         break;
