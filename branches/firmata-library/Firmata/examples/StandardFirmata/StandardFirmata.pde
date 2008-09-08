@@ -16,6 +16,7 @@
 
 #include <EEPROM.h>
 #include <Firmata.h>
+#include <WProgram.h>
 
 /*==============================================================================
  * GLOBAL VARIABLES
