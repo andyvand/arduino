@@ -37,8 +37,8 @@ extern "C" {
 
 void sendValueAsTwo7bitBytes(int value)
 {
-	Serial.print(value & B01111111, BYTE); // LSB
-	Serial.print(value >> 7 & B01111111, BYTE); // MSB
+    Serial.print(value & B01111111, BYTE); // LSB
+    Serial.print(value >> 7 & B01111111, BYTE); // MSB
 }
 
 void startSysex(void)
@@ -99,15 +99,11 @@ void FirmataClass::blinkVersion(void)
 {
     // flash the pin with the protocol version
     pinMode(VERSION_BLINK_PIN,OUTPUT);
-    pin13strobe(2,1,4); // separator, a quick burst
-    delay(500);
     pin13strobe(FIRMATA_MAJOR_VERSION, 200, 400);
-    delay(500);
+    delay(300);
     pin13strobe(2,1,4); // separator, a quick burst
-    delay(500);
+    delay(300);
     pin13strobe(FIRMATA_MINOR_VERSION, 200, 400);
-    delay(500);
-    pin13strobe(2,1,4); // separator, a quick burst
 }
 
 void FirmataClass::printFirmwareVersion(void)
