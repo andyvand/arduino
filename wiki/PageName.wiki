@@ -1,4 +1,4 @@
-#summary Hardware resources as used by the core functions and distributed libraries
+#summary Hardware resources as used by the core functions and distributed libraries as of Arduino 0017
 
 = Introduction =
 
@@ -12,8 +12,8 @@ Global timer settings:
 	* On all chips other than ATMEGA8: TIMER0 in fast PWM mode
 	* TIMER1, TIMER2 in 8-bit phase correct PWM mode
 	* On ATMEGA1280:
-		- TIMER3, TIMER4, TIMER5 prescale factor = 64
-		- TIMER3, TIMER4, TIMER5 in 8-bit phase correct PWM mode
+		* TIMER3, TIMER4, TIMER5 prescale factor = 64
+		*  TIMER3, TIMER4, TIMER5 in 8-bit phase correct PWM mode
 
 -------------------------
 
@@ -35,8 +35,8 @@ analogReference();
 	* Sets the ADC ref
 	* ADC prescale factor = 128
 	* ADC sample rate:
-		- 125kHz on 16MHz boards
-		- 62.5kHz on 8MHz boards
+		* 125kHz on 16MHz boards
+		* 62.5kHz on 8MHz boards
 
 	
 analogWrite();
@@ -135,7 +135,8 @@ Ethernet:
 		
 -------------------------
 Firmata:
-	// Hans, do that
+	// Paging Hans Steiner...
+
 -------------------------
 LiquidCrystal:
 	* Uses delayMicroseconds() in most functions, so will disable interrupts frequently
@@ -178,7 +179,5 @@ Wire:
 	* uses all the I2C resources
 	* TWI frequency of 100kHz
 	* activates internal pullups on clock and data pins
-
-
 
 
