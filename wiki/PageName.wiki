@@ -13,7 +13,7 @@ Global timer settings:
 	* TIMER1, TIMER2 in 8-bit phase correct PWM mode
 	* On ATMEGA1280:
 		* TIMER3, TIMER4, TIMER5 prescale factor = 64
-		*  TIMER3, TIMER4, TIMER5 in 8-bit phase correct PWM mode
+		* TIMER3, TIMER4, TIMER5 in 8-bit phase correct PWM mode
 
 -------------------------
 
@@ -44,21 +44,21 @@ analogWrite();
 	* Pins 9, 10: uses TIMER1
 	* Pins 3, 11 uses TIMER
 	* For the ATMEGA1280:	
-		Pin 2: TIMER3B
-		Pin 3: TIMER3C
-		Pin 4: TIMER0B	
-		Pin 5: TIMER3A
-		Pin 6: TIMER4A	
-		Pin 7: TIMER4B	
-		Pin 8: TIMER4C	
-		Pin 9: TIMER2B	
-		Pin 10: TIMER2A
-		Pin 11: TIMER1A
-		Pin 12: TIMER1B
-		Pin 13: TIMER0A
-		Pin 44: TIMER5C	
-		Pin 45: TIMER5B	
-		Pin 46: TIMER5A	
+		* Pin 2: TIMER3B
+		* Pin 3: TIMER3C
+		* Pin 4: TIMER0B	
+		* Pin 5: TIMER3A
+		* Pin 6: TIMER4A	
+		* Pin 7: TIMER4B	
+		* Pin 8: TIMER4C	
+		* Pin 9: TIMER2B	
+		* Pin 10: TIMER2A
+		* Pin 11: TIMER1A
+		* Pin 12: TIMER1B
+		* Pin 13: TIMER0A
+		* Pin 44: TIMER5C	
+		* Pin 45: TIMER5B	
+		* Pin 46: TIMER5A	
 
 
 HardwareSerial library:
@@ -76,30 +76,30 @@ HardwareSerial library:
 		* SIG_USART0_RECV, SIG_USART1_RECV, SIG_USART2_RECV, SIG_USART3_RECV
 
 millis();
-	TIMER0_OVF_vect
+	* TIMER0_OVF_vect
 	
 micros();
-	TIMER0_OVF_vect
+	* TIMER0_OVF_vect
 
 delay();
-	TIMER0_OVF_vect (via millis())
+	* TIMER0_OVF_vect (via millis())
 
 delayMicroseconds();
-	Turns off all interrupts while it's running
+	* Turns off all interrupts while it's running
 
 pulseIn();
-	Nothing significant
+	* Nothing significant
 
 shiftOut();
-	Nothing significant
+	* Nothing significant
 
 attachInterrupt(intNum);
-	Enables external interrupts
-	ATMEGA8, 168 and 328:
+	* Enables external interrupts
+	* ATMEGA8, 168 and 328:
 		* intNum = 0: uses INT0 on pin 2
 		* intNum = 1: uses INT1 on pin 3
 		
-	ATMEGA1280:
+	* ATMEGA1280:
 		* intNum = 0: uses INT4 on pin 2
 		* intNum = 1: uses INT5 on pin 3
 		* intNum = 2: uses INT0 on pin 21
@@ -108,13 +108,13 @@ attachInterrupt(intNum);
 		* intNum = 5 uses INT3 on pin 18.
 
 detachInterrupt();	
-	Disables external interrupts
+	* Disables external interrupts
 
 setup();
-	Nothing significant
+	* Nothing significant
 
 loop();
-	Nothing significant
+	* Nothing significant
 
 -------------------------
 -------------------------
@@ -148,7 +148,7 @@ Matrix:
 -------------------------
 
 Servo:
-	ATMEGA8, 168, 328:
+	* ATMEGA8, 168, 328:
 		* Uses TIMER1_COMPA_vect
 		* Sets the prescale factor = 8 (normally = 64)
 		* Uses OCR1A
@@ -179,5 +179,3 @@ Wire:
 	* uses all the I2C resources
 	* TWI frequency of 100kHz
 	* activates internal pullups on clock and data pins
-
-
