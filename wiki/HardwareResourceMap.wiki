@@ -2,12 +2,9 @@
 
 = Introduction =
 
-Hardware resource map
-	A list of which core functions use which resources
+This page discusses the features of the microcontroller (ATmega) that are used by the Arduino functions.
 
--------------------------
-
-Global timer settings:	
+= Global timer settings =
 	* TIMER0, TIMER1, TIMER2: prescale factor = 64
 	* On all chips other than ATMEGA8: TIMER0 in fast PWM mode
 	* TIMER1, TIMER2 in 8-bit phase correct PWM mode
@@ -15,9 +12,7 @@ Global timer settings:
 		* TIMER3, TIMER4, TIMER5 prescale factor = 64
 		* TIMER3, TIMER4, TIMER5 in 8-bit phase correct PWM mode
 
--------------------------
-
-Core functions:
+= Core functions = 
 
 pinMode();
 	* Nothing significant
@@ -42,7 +37,7 @@ analogReference();
 analogWrite();
 	* Pins 5, 6 uses TIMER0
 	* Pins 9, 10: uses TIMER1
-	* Pins 3, 11 uses TIMER
+	* Pins 3, 11 uses TIMER2
 	* For the ATMEGA1280:	
 		* Pin 2: TIMER3B
 		* Pin 3: TIMER3C
@@ -94,7 +89,7 @@ shiftOut();
 	* Nothing significant
 
 attachInterrupt(intNum);
-	* Enables external interrupts
+	* Enables the external interrupt
 	* ATMEGA8, 168 and 328:
 		* intNum = 0: uses INT0 on pin 2
 		* intNum = 1: uses INT1 on pin 3
@@ -108,44 +103,27 @@ attachInterrupt(intNum);
 		* intNum = 5 uses INT3 on pin 18.
 
 detachInterrupt();	
-	* Disables external interrupts
+	* Disables the external interrupt
 
-setup();
-	* Nothing significant
 
-loop();
-	* Nothing significant
-
--------------------------
--------------------------
-
-External Libraries:
-
--------------------------
--------------------------
+= Libraries =
 
 EEPROM:
 	* EEPROM
 
--------------------------
 Ethernet:
 	* Uses SPI 
 		* ATMEGA8, 168, 328: pins 13, 12, 11 and the ICSP header 
 		* ATMEGA1280: 50, 51, 52 and the ICSP header 
 		
--------------------------
 Firmata:
 	// Paging Hans Steiner...
 
--------------------------
 Liquid Crystal:
 	* Uses delayMicroseconds() in most functions, so will disable interrupts frequently
--------------------------
 
 Matrix:
 	* Nothing Significant
-
--------------------------
 
 Servo:
 	* ATMEGA8, 168, 328:
@@ -158,22 +136,14 @@ Servo:
 			* TIMER3_COMPA_vect, TIMER4_COMPA_vect,TIMER5_COMPA_vect
 			* OCR3A, OCR4A, OCR5A
 
--------------------------
-
 Software Serial:
 	* Uses delayMicroseconds() in most functions, so will disable interrupts frequently
 	
--------------------------
-
 Sprite:
 	* Nothing Significant
 
--------------------------
-
 Stepper:
 	* uses 	TIMER0_OVF_vect via millis() function
-
--------------------------
 
 Wire:
 	* uses all the I2C resources
