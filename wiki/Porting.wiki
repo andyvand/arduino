@@ -1,0 +1,27 @@
+#summary Hints on porting the Arduino core libraries to other hardware
+
+= Introduction =
+
+It is possible to use the Arduino software with hardware besides the Arduino board.  The fewer differences, the easier it will be.
+
+If you have questions or problems about getting the Arduino software to work with other hardware, please post to the [http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=dev software development forum].  For discussions of the circuit itself, please post to the [http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?board=hwdev hardware development forum].
+
+= ATmega8 or ATmega168 from Arduino =
+
+To use the Arduino software with an ATmega8 or ATmega168 on a different board or in a different circuit but still using a 16 MHz clock, you just need to figure out how to get your code onto the chip.  One possibility is to use the ATmega8 or ATmega168 that came with an Arduino and therefore already contains the Arduino bootloader.  Then, you can upload your sketch as normal (with the chip in the Arduino board), then move the chip to your own circuit or board.  
+
+= ATmega8 or ATmega168 without Bootloader = 
+
+If you've bought a new ATmega8 or ATmega168, then you'll need to burn a bootloader onto it before uploading your sketches.  See the bootloader page for more information.  If your board is not running at 16 MHz, you'll need to make more adjustments (see below).
+
+= ATmega8 or ATmega168 with a different external clock =
+
+If your circuit or board uses a different speed external clock (but still has one), then you'll need to make a few adjustments.   In the Arduino board definition file, you'll want to create a new board definition and set the *BOARD.build.f_cpu* preference to the speed of your clock.  Then you can compile and upload your sketches as normal.  Some functions (e.g. delayMicroseconds(), pulseIn(), and analogRead()) will behave differently (millis(), delay(), and serial communication should work fine).  You'll also need to recompile the bootloader with the correct clock speed specified, as the standard bootloaders assume 16 MHz.
+
+= ATmega168 using the internal clock = 
+
+To use an ATmega168 running on the internal (8 MHz) clock, just select the LilyPad option from the Boards menu.  If the ATmega168 was previously configured to use an external clock, you'll need to change the fuses to get it work off of the internal clock instead.
+
+= Other ATmega/AVR =
+
+To use a different ATmega/AVR chip, you'll need to make changes to the Arduino core, which is in the *hardware/cores/arduino* sub-folder of the Arduino application directory.  This shouldn't be too hard, but it will require reading the datasheet for your chip.  In particular, the names of registers and register bits are likely to vary between microcontrollers.
