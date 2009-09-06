@@ -2,10 +2,15 @@
 
 = Examples =
 
-[http://sanguino.cc/ Sanguino]: ([http://sanguino.cc/softwareforwindows instructions])
+[http://sanguino.cc/ Sanguino] ([http://sanguino.cc/softwareforwindows instructions]):
   * additional board definition
   * additional bootloader
   * custom core
   * modified libraries
 
-[http://www.pjrc.com/teensy/ Teensy]
+[http://www.pjrc.com/teensy/ Teensy] ([http://www.pjrc.com/teensy/td_download.html instructions]):
+  * additional board definitions
+  * custom core
+  * modified library
+  * custom uploader
+  * post-build processing
