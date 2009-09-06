@@ -1,0 +1,11 @@
+#summary Overview of the requirements for easy installation of support for third-party hardware.
+
+= Examples =
+
+[http://sanguino.cc/ Sanguino]: ([http://sanguino.cc/softwareforwindows instructions])
+  * additional board definition
+  * additional bootloader
+  * custom core
+  * modified libraries
+
+[http://www.pjrc.com/teensy/ Teensy]
