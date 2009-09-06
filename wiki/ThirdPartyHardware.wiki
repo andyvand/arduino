@@ -6,3 +6,4 @@
 || [http://sanguino.cc/ Sanguino] ([http://sanguino.cc/softwareforwindows instructions]) || X || X || X || X || || || ||
 || [http://www.pjrc.com/teensy/ Teensy] ([http://www.pjrc.com/teensy/td_download.html instructions]) || X || || X || X || custom tool || custom post-build tool || ||
 || [http://hci.rwth-aachen.de/luminet LumiNet] || X || X || X || || modified avrdude & custom class || || X ||
+|| [http://www.liquidware.com/shop/show/ILL/Illuminato Illuminato] ([http://www.liquidware.com/wikipages/name/Illuminato_Installation instructions]) || 
