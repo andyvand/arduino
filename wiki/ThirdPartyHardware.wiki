@@ -12,6 +12,8 @@
 
 == Abstracting Hardware Definitions for Portable Libraries ==
 
+See: [http://code.google.com/p/arduino/issues/detail?id=59 Issue 59] for one potential solution.
+
 == Supporting Custom Upload Processes and Tools ==
 
 == Supporting Custom Compilation Processes and Tools ==
