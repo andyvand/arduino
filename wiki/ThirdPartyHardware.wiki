@@ -17,6 +17,8 @@ See: [http://code.google.com/p/arduino/issues/detail?id=59 Issue 59] for one pot
 
 == Supporting Custom Upload Processes and Tools ==
 
+This can involve a custom version of avrdude (luminet), a custom upload tool (Teensy), or a custom Java class (luminet again).  There's a need to define a interface or API at one or more levels: e.g. Java class, command line, ant / make targets.
+
 == Supporting Custom Compilation Processes and Tools ==
 
 = To Do =
@@ -25,6 +27,3 @@ See: [http://code.google.com/p/arduino/issues/detail?id=59 Issue 59] for one pot
   # Support board definitions in individual files within SKETCHBOOK/boards
   # Support cores within SKETCHBOOK/cores
   # Support bootloaders within SKETCHBOOK/bootloaders
-  # Abstract hardware definitions so libraries can work across cores and boards
-  # Support for custom upload processes and external tools 
-  # Support for custom compilation processes and external tools
