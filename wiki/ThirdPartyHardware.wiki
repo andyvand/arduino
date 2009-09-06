@@ -7,3 +7,12 @@
 || [http://www.pjrc.com/teensy/ Teensy] ([http://www.pjrc.com/teensy/td_download.html instructions]) || X || || X || X || custom tool || custom post-build tool || ||
 || [http://hci.rwth-aachen.de/luminet LumiNet] || X || X || X || || modified avrdude & custom class || || X ||
 || [http://www.liquidware.com/shop/show/ILL/Illuminato Illuminato] ([http://www.liquidware.com/wikipages/name/Illuminato_Installation instructions]) || X || X || X || || || || ||
+
+= To Do =
+
+  # Support board definitions in individual files within SKETCHBOOK/boards
+  # Support cores within SKETCHBOOK/cores
+  # Support bootloaders within SKETCHBOOK/bootloaders
+  # Abstract hardware definitions so libraries can work across cores and boards
+  # Support for custom upload processes and external tools 
+  # Support for custom compilation processes and external tools
