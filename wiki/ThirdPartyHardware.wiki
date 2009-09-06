@@ -9,7 +9,8 @@
 || [http://www.liquidware.com/shop/show/ILL/Illuminato Illuminato] ([http://www.liquidware.com/wikipages/name/Illuminato_Installation instructions]) || X || X || X || || || || ||
 
 = To Do =
-
+  # Support ATtiny (-mtXXX) in command line parameters to avrdude
+  # Support for assembler (.S) files in cores and libraries
   # Support board definitions in individual files within SKETCHBOOK/boards
   # Support cores within SKETCHBOOK/cores
   # Support bootloaders within SKETCHBOOK/bootloaders
