@@ -8,6 +8,14 @@
 || [http://hci.rwth-aachen.de/luminet LumiNet] || X || X || X || || modified avrdude & custom class || || X ||
 || [http://www.liquidware.com/shop/show/ILL/Illuminato Illuminato] ([http://www.liquidware.com/wikipages/name/Illuminato_Installation instructions]) || X || X || X || || || || ||
 
+= Details =
+
+== Abstracting Hardware Definitions for Portable Libraries ==
+
+== Supporting Custom Upload Processes and Tools ==
+
+== Supporting Custom Compilation Processes and Tools ==
+
 = To Do =
   # Support ATtiny (-mtXXX) in command line parameters to avrdude
   # Support for assembler (.S) files in cores and libraries
