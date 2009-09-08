@@ -4,7 +4,7 @@
 
 || Hardware || board || bootloader || core || libraries || uploader || compiler || programmer ||
 || [http://sanguino.cc/ Sanguino] ([http://sanguino.cc/softwareforwindows instructions]) || X || X || X || X || || || ||
-|| [http://www.ruggedcircuits.com/ Gator] ([http://www.ruggedcircuits.com/html/arduino.html instructions]) || X || || two files || small patches || || || ||
+|| [http://www.ruggedcircuits.com/ Gator] ([http://www.ruggedcircuits.com/html/arduino.html instructions]) || X || || two files || small patches || small, non-essential patch || || ||
 || [http://www.pjrc.com/teensy/ Teensy] ([http://www.pjrc.com/teensy/td_download.html instructions]) || X || || X || X || custom tool || custom post-build tool || ||
 || [http://hci.rwth-aachen.de/luminet LumiNet] || X || X || X || || modified avrdude & custom class || || X ||
 || [http://www.liquidware.com/shop/show/ILL/Illuminato Illuminato] ([http://www.liquidware.com/wikipages/name/Illuminato_Installation instructions]) || X || X || X || || || || ||
