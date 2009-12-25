@@ -49,13 +49,14 @@ svn checkout http://arduino.googlecode.com/svn/trunk/ arduino
 
 == 3. Build It ==
 
-On the Mac, use the Xcode project to build the Arduino software. Set the active target to App to run Arduino, or to Distribute to create a .zip file.
-
-On Windows or Linux, use the command line.
+Use the command line.
 
 {{{
 # on Windows
 cd /path/to/arduino/build/windows
+
+# or Mac OS X
+cd /path/to/arduino/build/macosx
 
 # or if you're on linux
 cd /path/to/arduino/build/linux
