@@ -1,0 +1,5 @@
+#summary Test plan for Arduino 0018.
+
+=Introduction=
+
+This is a list of things to test in the Arduino 0018 release candidates.  See also the list of [http://code.google.com/p/arduino/issues/list?can=1&q=milestone=0018 issues addressed in Arduino 0018].
