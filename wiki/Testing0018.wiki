@@ -1,5 +1,10 @@
 #summary Test plan for Arduino 0018.
 
-=Introduction=
-
 This is a list of things to test in the Arduino 0018 release candidates.  See also the list of [http://code.google.com/p/arduino/issues/list?can=1&q=milestone=0018 issues addressed in Arduino 0018].
+
+Things to test in the core:
+
+ # Serial.end() - _ends serial communication and frees digital pins 0 and 1 for normal input and output._
+  * test a: after a call to Serial.end(), can pins 0 and 1 be used for normal input and output?
+  * test b: after a call to Serial.end(), will Serial.begin() re-enable serial communication?
+  * test c: does Serial.end() work on all four Serial ports on the Arduino Mega?
