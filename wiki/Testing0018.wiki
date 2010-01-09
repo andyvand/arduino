@@ -1,6 +1,15 @@
 #summary Test plan for Arduino 0018.
 
-This is a list of things to test in the Arduino 0018 release candidates.  See also the list of [http://code.google.com/p/arduino/issues/list?can=1&q=milestone=0018 issues addressed in Arduino 0018].
+Help is welcome; try as many of these tests as you like.  Report your findings in the comments, including:
+ * the operating system you tested on
+ * on Linux, the versions of avr-gcc and avr-libc (for the core) or java (for the IDE) installed
+ * the Arduino board you tested on
+ * the test(s) attempted
+ * the results
+
+Comments and suggestions welcome, but may be better added to the [http://code.google.com/p/arduino/issues/list issues list].
+
+See also: the list of [http://code.google.com/p/arduino/issues/list?can=1&q=milestone=0018 issues addressed in Arduino 0018].
 
 Things to test in the core:
 
@@ -8,3 +17,8 @@ Things to test in the core:
   * test a: after a call to Serial.end(), can pins 0 and 1 be used for normal input and output?
   * test b: after a call to Serial.end(), will Serial.begin() re-enable serial communication?
   * test c: does Serial.end() work on all four Serial ports on the Arduino Mega?
+ # tone() and noTone() - _frequency generation_
+  * test a: does tone() generate a square wave w/ 50% duty cycle on any pin?
+  * test b: does tone() generate the correct frequency (across multiple frequencies / timer prescale factors)?
+  * test c: does the tone() end after the specified duration?
+  * test d: 
