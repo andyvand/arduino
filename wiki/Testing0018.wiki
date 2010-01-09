@@ -38,3 +38,11 @@ Tests for the core:
  # micros() - _fixed incorrect check for timer 0 overflow_
   * test a: does the return value of micros() ever decrease from one call to the next (except on overflow)?
   * test b: does the return value micros() even jump significantly?
+
+Tests for the IDE:
+
+ # Third-party hardware
+ # Verbose output
+ # Saving
+ # File-names
+ # Upload from disk image (.dmg)
