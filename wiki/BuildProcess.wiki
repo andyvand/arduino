@@ -18,13 +18,15 @@ Sketches are compiled by avr-gcc and avr-g++ according to the variables in the b
 
 The include path includes the sketch's directory, the core folder (e.g. the hardware/arduino/core/arduino/ sub-folder of the Arduino application) and the avr include directory (hardware/tools/avr/avr/include/), as well as any library directories (in hardware/libraries/) which contain a header file which is included by the main sketch file.
 
-When you verify or upload a sketch, it is built in a temporary directory in the system temp directory (e.g. /tmp on the Mac).
+Note that libraries referenced only by another library (and not the main sketch file) are not placed in the include path or linked against the sketch.  All libraries used (even indirectly by another library) must be #included by the main sketch file.
+
+When you verify or upload a sketch, it is built in a temporary directory in the system-wide temporary directory (e.g. /tmp on Linux).
 
 The .c and .cpp files of the target are compiled and output with .o extensions to this directory, as is the main sketch file and any other .c or .cpp files in the sketch and any .c or .cpp files in any libraries which are #included in the sketch.
 
 These .o files are then linked together into a static library and the main sketch file is linked against this library.  Only the parts of the library needed for your sketch are included in the final .hex file, reducing the size of most sketches.
 
-The .hex file is the final output of the compilation which is then uploaded to the board.  The .hex file is written to /tmp (on Mac and Linux) or \Documents and Settings\_USER_\Local Settings\Temp (on Windows).
+The .hex file is the final output of the compilation which is then uploaded to the board.  
 
 If build.verbose is set to true in the main preferences file, or if shift is held down when clicking the *Compile / Verify* toolbar button, the complete command line of each external command executed as part of the build process will be printed in the editor console.
 
