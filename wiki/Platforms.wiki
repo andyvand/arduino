@@ -16,12 +16,6 @@ Variables controlling the process of building sketches for the board:
 
  * _BOARD_.build.core: the location of the core to link sketches against when compiling for the board. This may be the name of a folder in the *core* sub-folder of the platform (e.g. "arduino") or a value of the format _platform_:_core_, where _platform_ is the name of the folder of another platform and _core_ is a folder in that platform's *core* folder.
 
-Also useful is this setting in the main preferences.txt file:
-
- * build.verbose: whether or not to print debugging messages while building a sketch (e.g. "false").  If true, will print the complete command line of each external command executed as part of the build process.
-
-_Note:_ that in Arduino 0004 and later, build.extension is unused - the main sketch file is always treated as a .cpp file.
-
 Variables controlling the upload process:
 
  * _BOARD_.upload.protocol: the protocol that avrdude should use to talk to the board (typically "stk500").
@@ -30,11 +24,21 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
-And in the main preferences file:
-
- * upload.verbose: whether or not to dump debugging messages while upload a sketch to a board (defaults to "false").
-
 Variables controlling the process of burning a bootloader onto the board:
+
+ * _BOARD_.bootloader.low_fuses: the byte to write to the low fuses of the microcontroller when burning the bootloader (e.g. "0xFF")
+
+ * _BOARD_.bootloader.high_fuses: the byte to write to the high fuses of the microcontroller (e.g. "0xDA")
+
+ * _BOARD_.bootloader.extended_fuses: the byte to write to the extended fuses (e.g. 0x05).  Note that avrdude (used by Arduino) uses 0 for unused fuse bits, whereas AVR Studio uses 1; this byte's value may need to be changed when moving between the two.
+
+ * _BOARD_.bootloader.path: the location of the folder containing the bootloader .hex file.  This may be the name of a sub-folder of the *bootloader* sub-folder of the board's platform, or a value of the form _platform_:_path_, where _platform_ is the name of the folder of another platform, and _path_ is a sub-folder of its *bootloaders* sub-folder.
+
+ * _BOARD_.bootloader.file: the name of the .hex file (without any folder names or paths).
+
+ * _BOARD_.bootloader.unlock_bits: the byte to write to the lock fuses of the microcontroller to unlock it before burning the bootloader.
+
+ * _BOARD_.bootloader.lock_bits: the byte to write to the lock fuses of the microcontroller to lock it after burning the bootloader.
 
 = Bootloaders = 
 
