@@ -31,7 +31,7 @@ Core tests:
   * test c: can digital outputs be controlled?
   * test d: can analog outputs (PWM waves) be controlled?
   * test e: can servo motors be controlled?
- # LiquidCrystal
+ # !LiquidCrystal
   * test a: is there an absence of strange behavior when omitting the RW pin?
  # Analog inputs
   * test a: do analog inputs 8 to 15 work properly on the Arduino Mega?
