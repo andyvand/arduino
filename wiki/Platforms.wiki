@@ -30,4 +30,8 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
+And in the main preferences file:
+
+ * upload.verbose: whether or not to dump debugging messages while upload a sketch to a board (defaults to "false").
+
 Variables controlling the process of burning a bootloader onto the board:
