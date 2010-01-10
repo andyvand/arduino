@@ -4,7 +4,9 @@ As of version 0018, the Arduino environment supports multiple platforms: collect
 
 = Boards =
 
-The Arduino environment supports multiple target boards with different chips (currently, only AVRs), CPU speeds, or bootloaders.  These are defined in boards.txt.  A board is specified by multiple variables prefixed with the same keyword (shown here as _BOARD_):
+The Arduino environment supports multiple target boards with different chips (currently, only AVRs), CPU speeds, or bootloaders.  These are defined in boards.txt.  A board is specified by multiple variables prefixed with the same keyword (shown here as _BOARD_).  The file consists of multiple lines with the format _key=value_.  Lines that start with a `#` are comments and ignored.
+
+Boards have many variables, including:
 
  * _BOARD_.name: the name to display in the *Boards* menu
 
