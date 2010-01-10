@@ -48,8 +48,15 @@ IDE tests:
   * test d: can a sketch be compiled for a third-party board that uses a core from another third-party platform (using the platform:core syntax in boards.txt)?
   * test e: can the bootloader from the same platform be burned onto a third-party board?
   * test f: can a built-in bootloader be burned onto a third-party board?
-
+  * test g: can a bootloader from another third-party platform be burned onto a third-party board?
  # Verbose output
+  * test a: does holding down the shift key while pressing the *Compile / Verify* toolbar button generate verbose output?
+  * test b: does holding down the shift key while pressing the *Upload* toolbar button generate verbose output?
  # Saving
+  * test a: are changes successfully saved when closing the last, modified, sketch (and clicking "Save")?
+  * test b: are changes successfully saved when opening a sketch or creating a new sketch within an editor with unsaved changes (and clicking "Save")?
  # File-names
+  * test a: can a .cpp, .c, and .h file with the same name be added to a sketch and successfully compiled?
+  * test b: does the IDE prevent the presence of a .cpp file with the same name as the sketch (whether upon creation of the .cpp file or renaming of the sketch)?
  # Upload from disk image (.dmg)
+  * test a: can the examples be successfully uploaded when Arduino.app is run from with the disk image (.dmg) on Mac OS X?
