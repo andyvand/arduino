@@ -9,7 +9,7 @@ Help is welcome; try as many of these tests as you like.  Report your findings i
 
 If found, please also add bugs to the [http://code.google.com/p/arduino/issues/list issues list].  Also see the list of [http://code.google.com/p/arduino/issues/list?can=1&q=milestone=0018 issues addressed in Arduino 0018].
 
-Tests for the core:
+Core tests:
 
  # Serial.end() - _ends serial communication and frees digital pins 0 and 1 for normal input and output._
   * test a: after a call to Serial.end(), can pins 0 and 1 be used for normal input and output?
@@ -39,9 +39,16 @@ Tests for the core:
   * test a: does the return value of micros() ever decrease from one call to the next (except on overflow)?
   * test b: does the return value micros() even jump significantly?
 
-Tests for the IDE:
+IDE tests:
 
- # Third-party hardware
+ # Third-party hardware - _support for boards.txt, bootloaders, cores, and programmers.txt in hardware sub-directory of the sketchbook directory_
+  * test a: do boards listed in such a boards.txt file appear in the boards menu in the IDE?
+  * test b: can a sketch be compiled for a third-party board that uses a core in its own platform (sub-directory of hardware)?
+  * test c: can a sketch be compiled for a third-party board that uses the built-in arduino core?
+  * test d: can a sketch be compiled for a third-party board that uses a core from another third-party platform (using the platform:core syntax in boards.txt)?
+  * test e: can the bootloader from the same platform be burned onto a third-party board?
+  * test f: can a built-in bootloader be burned onto a third-party board?
+
  # Verbose output
  # Saving
  # File-names
