@@ -37,4 +37,4 @@ _Note:_ that in Arduino 0004 and later, build.extension is unused - the main ske
 
 Sketches are uploaded by avrdude.
 
-The upload process is also controlled by variables in the boards and main preferences files.  See the Platforms page for details.
+The upload process is also controlled by variables in the boards and main preferences files.  See the [Platforms platforms] page for details.
