@@ -1,0 +1,33 @@
+#summary the format of files and folders in an Arduino hardware platform
+
+As of version 0018, the Arduino environment supports multiple platforms: collections of boards, bootloaders, cores, and programmers.  The built-in *arduino* platform comes built in to the distribution; others may be installed in the *hardware* sub-folder of the sketchbook folder.  This document describes the structure and organization of the files and folders in such a platform.
+
+= boards.txt =
+
+The Arduino environment supports multiple target boards with different chips (currently, only AVRs), CPU speeds, or bootloaders.  These are defined in boards.txt.  A board is specified by multiple variables prefixed with the same keyword (shown here as _BOARD_):
+
+ * _BOARD_.name: the name to display in the *Boards* menu
+
+Variables controlling the process of building sketches for the board:
+
+ * _BOARD_.build.mcu: the microcontroller on the board (e.g. "atmega328" or "atmega1280").
+
+ * _BOARD_.build.f_cpu: the clock speed at which the microcontroller operates (normally "16000000L", or, for an ATmega168 running on its internal clock, "8000000L").
+
+ * _BOARD_.build.core: the location of the core to link sketches against when compiling for the board. This may be the name of a folder in the *core* sub-folder of the platform (e.g. "arduino") or a value of the format _platform_:_core_, where _platform_ is the name of the folder of another platform and _core_ is a folder in that platform's *core* folder.
+
+Also useful is this setting in the main preferences.txt file:
+
+ * build.verbose: whether or not to print debugging messages while building a sketch (e.g. "false").  If true, will print the complete command line of each external command executed as part of the build process.
+
+_Note:_ that in Arduino 0004 and later, build.extension is *unused* - the main sketch file is always treated as a .cpp file.
+
+Variables controlling the upload process:
+
+ * _BOARD_.upload.protocol: the protocol that avrdude should use to talk to the board (typically "stk500").
+
+ * _BOARD_.upload.speed: the speed (baud rate) avrdude should use when uploading sketches (typically "19200").
+
+ * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
+
+Variables controlling the process of burning a bootloader onto the board:
