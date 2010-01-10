@@ -1,4 +1,4 @@
-#summary The format of files and folders in an Arduino hardware platform
+#summary The format of files and folders in an Arduino hardware platform.
 
 As of version 0018, the Arduino environment supports multiple platforms: collections of boards, bootloaders, cores, and programmers.  The built-in *arduino* platform comes built in to the distribution; others may be installed in the *hardware* sub-folder of the sketchbook folder.  This document describes the structure and organization of the files and folders in such a platform.
 
