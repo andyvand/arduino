@@ -36,6 +36,10 @@ And in the main preferences file:
 
 Variables controlling the process of burning a bootloader onto the board:
 
+= Bootloaders = 
+
+The *bootloaders* sub-folder of a platform contains the bootloaders for the boards in the platform.  These should appear as .hex files in a sub-folder of the *bootloaders* folder.  Often, the source code for the bootloader is also included, along with a Makefile for building the .hex file.  
+
 = Cores =
 
 A core is a set of .c, .cpp, and .h files that implement the basic Arduino functions for a platform.  Each core appears as a sub-folder of the *cores* sub-folder of a platform.
@@ -46,4 +50,16 @@ A core should include at least the following files:
 
  * main.cpp: a conventional location in which to specify the *main()* function of the sketch.  It should call *setup()* once and *loop()* over and over again.
 
-= Bootloaders = 
+= Programmers =
+
+Programmers may be specified in the *programmers.txt* file in a platform.  This file has a format similar to the *boards.txt* file, but with the following variables:
+
+ * _PROGRAMMER_.name: the name to display in the *Burn Bootloader* menu
+
+ * _PROGRAMMER_.communication: either "serial" for programmers that use a serial device (to be selected from the *Tools > Serial Port* menu), "usb" for those that use the "-P usb" parameter to avrdude, or omitted for other programmer types.
+
+ * _PROGRAMMER_.protocol: the programmer's protocol, passed as the "-c" parameter to avrdude.
+
+ * _PROGRAMMER_.force: whether or not to send the "-F" parameter to avrdude, which ignores signature mismatches.  Defaults to false if omitted.
+
+ * _PROGRAMMER_.speed: a baud rate to send as the "-b" parameter to avrdude (optional).
