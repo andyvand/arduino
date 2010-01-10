@@ -22,10 +22,3 @@ See: [http://code.google.com/p/arduino/issues/detail?id=59 Issue 59] for one pot
 This can involve a custom version of avrdude (luminet), a custom upload tool (Teensy), or a custom Java class (luminet again).  There's a need to define a interface or API at one or more levels: e.g. Java class, command line, ant / make targets.
 
 == Supporting Custom Compilation Processes and Tools ==
-
-= To Do =
-  # Support ATtiny (-mtXXX) in command line parameters to avrdude
-  # Support for assembler (.S) files in cores and libraries
-  # Support board definitions in individual files within SKETCHBOOK/boards
-  # Support cores within SKETCHBOOK/cores
-  # Support bootloaders within SKETCHBOOK/bootloaders
