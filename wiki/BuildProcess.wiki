@@ -30,9 +30,6 @@ The .hex file is the final output of the compilation which is then uploaded to t
 
 If build.verbose is set to true in the main preferences file, or if shift is held down when clicking the *Compile / Verify* toolbar button, the complete command line of each external command executed as part of the build process will be printed in the editor console.
 
-_Note:_ that in Arduino 0004 and later, build.extension is unused - the main sketch file is always treated as a .cpp file.
-
-
 = Uploading =
 
 Sketches are uploaded by avrdude.  The upload process is also controlled by variables in the boards and main preferences files.  See the [Platforms platforms] page for details.
