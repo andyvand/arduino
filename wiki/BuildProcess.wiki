@@ -14,7 +14,7 @@ The Arduino environment performs a few transformations to your main sketch file 
 
 First, #include "WProgram.h" is added to your sketch.  This header file (found in the core folder for the currently selected board) includes all the definitions needed for the standard Arduino core. Next, the environment searches for function definitions within your main sketch file and creates declarations (prototypes) for them.  The #include statement and function prototypes are inserted after any comments or pre-processor statements (#includes or #defines), but before any other statements (including type declarations).  This means that if you want to use a custom type as a function argument, you should declare it within a separate header file.  Also, this generation isn't perfect: it won't create prototypes for functions that have default argument values, or which are declared within a namespace or class. 
 
-= Build process =
+= Compilation =
 
 Sketches are compiled by avr-gcc and avr-g++.
 
@@ -33,8 +33,8 @@ If build.verbose is set to true in the main preferences file, or if shift is hel
 _Note:_ that in Arduino 0004 and later, build.extension is unused - the main sketch file is always treated as a .cpp file.
 
 
-= Upload process =
+= Uploading =
 
-Sketches are uploaded by avrdude.
+Sketches are uploaded by avrdude.  The upload process is also controlled by variables in the boards and main preferences files.  See the [Platforms platforms] page for details.
 
-The upload process is also controlled by variables in the boards and main preferences files.  See the [Platforms platforms] page for details.
+If upload.verbose is set to true in the main preferences file, or if the shift key is held down when clicking the *Upload* toolbar button, debugging information will be output to the editor console, including avrdude command lines and verbose output.
