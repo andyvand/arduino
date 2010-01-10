@@ -20,9 +20,11 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.protocol: the protocol that avrdude should use to talk to the board (typically "stk500").
 
- * _BOARD_.upload.speed: the speed (baud rate) avrdude should use when uploading sketches (typically "19200").
+ * _BOARD_.upload.speed: the speed (baud rate) avrdude should use when uploading sketches (e.g. "19200").
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
+
+ * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp").
 
 Variables controlling the process of burning a bootloader onto the board:
 
