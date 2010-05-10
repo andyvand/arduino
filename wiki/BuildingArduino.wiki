@@ -6,7 +6,9 @@
 
 === Windows ===
 
-On Windows, install Cygwin. It's downloadable from www.cygwin.com or specifically: www.cygwin.com/setup.exe
+On Windows, you'll need Cygwin, a Java JDK, and ant.
+
+Cygwin is downloadable from http://www.cygwin.com/ or specifically: http://www.cygwin.com/setup.exe
 
 Of the packages, begin with the defaults, and add:
   * svn - used for version control
@@ -23,19 +25,17 @@ Not required but useful:
 
 And be sure to leave the option selected for 'unix line endings' 
 
-the cygwin installer is sometimes a little flakey, so it may take more 
-than one try to get everything in there. in fact, it's often best to
-run the installer once, and let it install all its defaults, then run 
-it again, and select the items above. it's also useful to run the 
-installer every few months to keep things fresh.
+Download and install [http://ant.apache.org/ ant].  Add the apache-ant-xxx\bin directory to your path.  
 
-You'll also need to install [http://ant.apache.org/ ant] and a Java JDK.
+Download and install a Java JDK and point the JAVA_HOME environment variable to its root directory.  An error message that reads "Unable to locate tools.jar. Expected to find  it in C:\Program Files\Java\jre6\lib\tools.jar" means you need to set JAVA_HOME to your JDK (not JRE) installation.
+
+
 
 === Mac OS X ===
 On Mac OS X, install Apple's Developer Tools and subversion.
 
 === Linux ===
-On Linux, you need the Sun Java SDK, avr-gcc, make, ant, and subversion.
+On Linux, you need the Sun Java SDK, avr-gcc, avr-g++, avr-libc, make, ant, and subversion.
 
 
 == 2. Grab the code from Google ==
