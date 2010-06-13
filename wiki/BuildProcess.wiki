@@ -16,7 +16,7 @@ The #include statement and function prototypes are inserted after any comments o
 
 Sketches are compiled by avr-gcc and avr-g++ according to the variables in the boards.txt file of the selected board's [Platforms platform].
 
-The include path includes the sketch's directory, the core folder (e.g. the hardware/arduino/core/arduino/ sub-folder of the Arduino application) and the avr include directory (hardware/tools/avr/avr/include/), as well as any library directories (in hardware/libraries/) which contain a header file which is included by the main sketch file.
+The include path includes the sketch's directory, the core folder (e.g. the hardware/arduino/core/arduino/ sub-folder of the Arduino application) and the avr include directory (hardware/tools/avr/avr/include/), as well as any library directories (in hardware/libraries/ and the libraries/ sub-directory of your sketchbook) which contain a header file which is included by the main sketch file.
 
 Note that libraries referenced only by another library (and not the main sketch file) are not placed in the include path or linked against the sketch.  All libraries used (even indirectly by another library) must be #included by the main sketch file.
 
