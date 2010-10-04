@@ -11,7 +11,7 @@ On Windows, you'll need Cygwin, a Java JDK, and ant.
 Cygwin is downloadable from http://www.cygwin.com/ or specifically: http://www.cygwin.com/setup.exe
 
 Of the packages, begin with the defaults, and add:
-  * svn - used for version control
+  * git - used for version control
   * make, gcc-mingw, and g++ - used to build arduino.exe (this will also pull in gcc-core)
   * perl - use this version, activestate or other distros have trouble
   * unzip, zip - for dealing with archives
@@ -32,19 +32,19 @@ Download and install a Java JDK and point the JAVA_HOME environment variable to 
 
 
 === Mac OS X ===
-On Mac OS X, install Apple's Developer Tools and subversion.
+On Mac OS X, install Apple's Developer Tools and git.
 
 === Linux ===
-On Linux, you need the Sun Java SDK, avr-gcc, avr-g++, avr-libc, make, ant, and subversion.
+On Linux, you need the Sun Java SDK, avr-gcc, avr-g++, avr-libc, make, ant, and git.
 
 
-== 2. Grab the code from Google ==
+== 2. Grab the code from GitHub ==
 
 this grabs the code as an anonymous user. 
 
 {{{
 # grab the code, it'll take a while
-svn checkout http://arduino.googlecode.com/svn/trunk/ arduino
+git clone git://github.com/arduino/Arduino.git
 # (maybe even a long while for you dialup and international folks)
 }}}
 
@@ -73,7 +73,8 @@ Each time you want to update to latest version from svn:
 
 {{{
 cd /path/to/arduino
-svn update
+git pull
+git update
 }}}
 
 If new folders have been added, or you're gettin odd errors, use:
