@@ -16,7 +16,7 @@ Variables controlling the process of building sketches for the board:
 
  * _BOARD_.build.f_cpu: the clock speed at which the microcontroller operates (normally "16000000L", or, for an ATmega168 running on its internal clock, "8000000L").
 
- * _BOARD_.build.core: the location of the core to link sketches against when compiling for the board. This may be the name of a folder in the *core* sub-folder of the platform (e.g. "arduino") or a value of the format _platform_:_core_, where _platform_ is the name of the folder of another platform and _core_ is a folder in that platform's *core* folder.
+ * _BOARD_.build.core: the location of the core to link sketches against when compiling for the board. This may be the name of a folder in the *core* sub-folder of the platform (e.g. "arduino") or a value of the format _platform_:_core_, where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino") and _core_ is a folder in that platform's *core* folder.
 
 Variables controlling the upload process:
 
@@ -26,7 +26,7 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
- * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp").
+ * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  
 
 Variables controlling the process of burning a bootloader onto the board:
 
