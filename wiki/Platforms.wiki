@@ -26,7 +26,7 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
- * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  
+ * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  If this variable is specified (and not equal to "bootloader"), the _BOARD_.upload.protocol and _BOARD_.upload.speed variables are ignored.
 
 Variables controlling the process of burning a bootloader onto the board:
 
