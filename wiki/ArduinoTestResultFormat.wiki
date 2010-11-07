@@ -1,12 +1,12 @@
 #labels Phase-QA,Phase-Implementation
 =Arduino Test Result Format=
 
-The Arduino test result format is based on the need for a result that can be streamed, sumary data is at the end of the test, and is human readable. This format is equivalent to the Python Unit Test verbose mode 2. Details can be found here: http://docs.python.org/library/unittest.html 
+The Arduino test result format is based on the need for a result that can be streamed, summary data is at the end of the test, and is human readable. This format is equivalent to the Python Unit Test verbose mode 2. Details can be found here: http://docs.python.org/library/unittest.html 
 
-Test result format description.
+==Test result format description.==
 
 The file begins with info data. It's indicated by having "info." at the begging of the line.
-Common info fields:
+===Common info fields:===
 {{{
 info.MANUFACTURER    = Arduino
 info.CPU-NAME        = ATmega328P
@@ -18,32 +18,32 @@ info.Test-Suite-Name = general
 
 Followed by test run results.
 
-Test run results format:
+===Test run results format:===
 {{{
 name of test (information about test)   ... test result status
 }}}
 
-A test has the following test result conditions:
+===A test has the following test result conditions:===
 {{{
 ok
 FAIL
 ERROR
 }}}
 
-Test result summary is last and seperated from the test by dashes:
+===Test result summary is last and separated from the test by dashes:===
 {{{
 --------------------------
 }}}
-Summary will say:
+===Summary will say:===
 {{{
 Ran n tests in Secs
 }}}
-Test suite final condition:
+===Test suite final condition:===
 {{{
 OK
 FAILED (failures=n)
 }}}
-Example of Success:
+===Example of Success:===
 {{{
 info.MANUFACTURER    = Arduino
 info.CPU-NAME        = ATmega328P
@@ -89,7 +89,7 @@ OK
 }}}
 
 
-Example  Mixed Success and Fail Results:
+===Example  Mixed Success and Fail Results:===
 {{{
 info.MANUFACTURER    = Arduino
 info.CPU-NAME        = ATmega328P
