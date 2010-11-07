@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation
-Arduino Test Result Format
+=Arduino Test Result Format=
 
 The Arduino test result format is based on the need for a result that can be streamed, sumary data is at the end of the test, and is human readable. This format is equivalent to the Python Unit Test verbose mode 2. Details can be found here: http://docs.python.org/library/unittest.html 
 
@@ -7,30 +7,37 @@ Test result format description.
 
 The file begins with info data. It's indicated by having "info." at the begging of the line.
 Common info fields:
+{{{
 info.MANUFACTURER    = Arduino
 info.CPU-NAME        = ATmega328P
 info.GCC-Version     = 4.3.2
 info.AVR-LibC-Ver    = 1.6.4
 info.Compiled-date   = Oct  4 2010
 info.Test-Suite-Name = general
-
+}}}
 
 Followed by test run results.
 
 Test run results format:
+{{{
 name of test (information about test)   ... test result status
+}}}
 
 A test has the following test result conditions:
+{{{
 ok
 FAIL
 ERROR
+}}}
 
 Test result summary is last and seperated from the test by dashes:
+{{{
 --------------------------
-
+}}}
 Summary will say:
+{{{
 Ran n tests in Secs
-
+}}}
 Test suite final condition:
 {{{
 OK
@@ -126,4 +133,3 @@ Ran 30 tests in 7.326s
 
 FAILED (failures=6)
 }}}
-
