@@ -182,22 +182,22 @@ FAILED (failures=1)
 }}}
 ===Examples===
 
-    * ATS_Skeleton: Test skeleton you can build your own tests from 
-    * ATS_General: Tests Digital Read/Write, Analog Read/Write, PWM, EEPROM, and Serial loopback.
-    * ATS_Constants: Tests the constants as spec'ed by Arduino documentation
-    * ATS_StringTest: Test features of the String Library
-    * ATS_StringIndexOfMemory: Tests whether memory was lost during the use of strings
+    * [ATS_Skeleton]: Test skeleton you can build your own tests from 
+    * [ATS_General]: Tests Digital Read/Write, Analog Read/Write, PWM, EEPROM, and Serial loopback.
+    * [ATS_Constants]: Tests the constants as spec'ed by Arduino documentation
+    * [ATS_StringTest]: Test features of the String Library
+    * [ATS_StringIndexOfMemory]: Tests whether memory was lost during the use of strings
 
 
 ==Builtin Tests==
 These can be useful in combination with a custom test.
 
-    * ATS_ReportMemoryUsage(int _memoryUsageAtStart)
-    * ATS_Test_DigitalPin(uint8_t digitalPinToTest);
-    * ATS_Test_PWM_Pin(uint8_t digitalPinToTest);
-    * ATS_Test_AnalogInput(uint8_t analogPintoTest);
-    * ATS_Test_EEPROM(void);
-    * ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName);
+    * [ATS_ReportMemoryUsage(int _memoryUsageAtStart)]
+    * [ATS_Test_DigitalPin(uint8_t digitalPinToTest)]
+    * [ATS_Test_PWM_Pin(uint8_t digitalPinToTest)]
+    * [ATS_Test_AnalogInput(uint8_t analogPintoTest)]
+    * [ATS_Test_EEPROM(void)]
+    * [ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName)]
 
 
 ==See Also==
