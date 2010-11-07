@@ -192,12 +192,12 @@ FAILED (failures=1)
 ==Builtin Tests==
 These can be useful in combination with a custom test.
 
-    * [ATS_ReportMemoryUsage(int _memoryUsageAtStart)]
-    * [ATS_Test_DigitalPin(uint8_t digitalPinToTest)]
-    * [ATS_Test_PWM_Pin(uint8_t digitalPinToTest)]
-    * [ATS_Test_AnalogInput(uint8_t analogPintoTest)]
-    * [ATS_Test_EEPROM(void)]
-    * [ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName)]
+    * ATS_ReportMemoryUsage(int _memoryUsageAtStart)
+    * ATS_Test_DigitalPin(uint8_t digitalPinToTest)
+    * ATS_Test_PWM_Pin(uint8_t digitalPinToTest)
+    * ATS_Test_AnalogInput(uint8_t analogPintoTest)
+    * ATS_Test_EEPROM(void)
+    * ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName)
 
 
 ==See Also==
