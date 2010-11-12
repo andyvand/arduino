@@ -1,0 +1,16 @@
+=ATS_end()=
+
+==Description==
+Completes the test suite process and reports the final test information.
+
+==Syntax==
+ATS_end()
+
+==Parameters==
+None
+
+==Returns==
+None
+
+==See also==
+[ATS_begin ATS_begin()]
