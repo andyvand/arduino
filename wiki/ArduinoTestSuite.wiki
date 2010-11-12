@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation
- =Arduino Test Suite Library=
+=Arduino Test Suite Library=
 
 This initial library was contributed by a collaboration between Mark Sproul, and Rick Anderson. The idea was to get a simple test suite going so that anyone can make tests and test cases for the Arduino software. Just as it should be easy to get going with programming an Arduino, we want it to be the same  for testing the Arduino.  Since this is the initial draft of documentation and code, we expect feedback, and are ready to address any issues, and add improvements. We monitor the Arduino developer mailing list regularly. Please send feed back there. And now onto the documentation:
 
@@ -16,7 +16,7 @@ This library allows you to create standard test suite for the Arduino software. 
 
 ===A Brief Introduction to the Arduino Test Suite Library===
 
-To take advantage of the Arduino Test Library include the !ArduinoTestSuite.h file at the top of your code. Because the test results are returned via the serial interface so for all tests you also need to include WProgram.h, and HardwareSerial.h. Once include you are free to include other libraries as need to perform your test or tests. In the setup you can now configure your test or tests. To start the test you'll need to use:
+To take advantage of the Arduino Test Library include the !ArduinoTestSuite.h file at the top of your code. Because the test results are returned via the serial interface so for all tests you also need to include WProgram.h, and !HardwareSerial.h. Once include you are free to include other libraries as need to perform your test or tests. In the setup you can now configure your test or tests. To start the test you'll need to use:
 {{{
 ATS_begin("Arduino","My bare bones tests.");
 }}}
@@ -192,12 +192,12 @@ FAILED (failures=1)
 ==Builtin Tests==
 These can be useful in combination with a custom test.
 
-    * ATS_ReportMemoryUsage(int _memoryUsageAtStart)
-    * ATS_Test_DigitalPin(uint8_t digitalPinToTest)
-    * ATS_Test_PWM_Pin(uint8_t digitalPinToTest)
-    * ATS_Test_AnalogInput(uint8_t analogPintoTest)
-    * ATS_Test_EEPROM(void)
-    * ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName)
+    * [ATS_ReportMemoryUsage ATS_ReportMemoryUsage(int _memoryUsageAtStart)]
+    * [ATS_Test_DigitalPin ATS_Test_DigitalPin(uint8_t digitalPinToTest)]
+    * [ATS_Test_PWM_Pin ATS_Test_PWM_Pin(uint8_t digitalPinToTest)]
+    * [ATS_Test_AnalogInput ATS_Test_AnalogInput(uint8_t analogPintoTest)]
+    * [ATS_Test_EEPROM ATS_Test_EEPROM(void)]
+    * [ATS_TestSerialLoopback ATS_TestSerialLoopback(HardwareSerial *theSerialPort, char *serialPortName)]
 
 
 ==See Also==
