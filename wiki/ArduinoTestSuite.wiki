@@ -9,7 +9,7 @@ This library allows you to create standard test suite for the Arduino software. 
 
 ===Functions===
 
-    * [ATS_begin link ATS_begin()]
+    * [ATS_begin ATS_begin()]
     * [ATS_end()]
     * [ATS_PrintTestStatus()]
 
