@@ -1,11 +1,11 @@
 =Arduino List of Known Tests=
  
-*[ATS_Skeleton]: Test skeleton you can build your own tests from.
+[ATS_Skeleton]: Test skeleton you can build your own tests from.
 
-*[ATS_General]: Tests Digital Read/Write, Analog Read/Write, PWM, EEPROM, and Serial loopback.
+[ATS_General]: Tests Digital Read/Write, Analog Read/Write, PWM, EEPROM, and Serial loopback.
 
-*[ATS_Constants]: Tests the constants as spec'ed by Arduino documentation.
+[ATS_Constants]: Tests the constants as spec'ed by Arduino documentation.
 
-*[ATS_StringTest]: Test features of the String Library.
+[ATS_StringTest]: Test features of the String Library.
 
-*[ATS_StringIndexOfMemory]: Test of the memory usage for String Library IndexOf() function.
+[ATS_StringIndexOfMemory]: Test of the memory usage for String Library IndexOf() function.
