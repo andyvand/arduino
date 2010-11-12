@@ -1,4 +1,4 @@
-=ATS__!PrintTestStatus()=
+=ATS__PrintTestStatus()=
 
 ==Description==
 Sets the name of the test case. Sets the test status to either true or false.
