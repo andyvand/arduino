@@ -1,5 +1,5 @@
 #labels Phase-QA,Phase-Implementation
-=Arduino Test Suite Library=
+ =Arduino Test Suite Library=
 
 This initial library was contributed by a collaboration between Mark Sproul, and Rick Anderson. The idea was to get a simple test suite going so that anyone can make tests and test cases for the Arduino software. Just as it should be easy to get going with programming an Arduino, we want it to be the same  for testing the Arduino.  Since this is the initial draft of documentation and code, we expect feedback, and are ready to address any issues, and add improvements. We monitor the Arduino developer mailing list regularly. Please send feed back there. And now onto the documentation:
 
@@ -10,7 +10,7 @@ This library allows you to create standard test suite for the Arduino software. 
 ===Functions===
 
     * [ATS_begin ATS_begin()]
-    * [ATS_eng ATS_end()]
+    * [ATS_end ATS_end()]
     * [ATS_PrintTestStatus ATS_PrintTestStatus()]
 
 
