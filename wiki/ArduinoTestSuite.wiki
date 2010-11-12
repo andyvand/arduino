@@ -16,7 +16,7 @@ This library allows you to create standard test suite for the Arduino software. 
 
 ===A Brief Introduction to the Arduino Test Suite Library===
 
-To take advantage of the Arduino Test Library include the ArduinoTestSuite.h file at the top of your code. Because the test results are returned via the serial interface so for all tests you also need to include WProgram.h, and HardwareSerial.h. Once include you are free to include other libraries as need to perform your test or tests. In the setup you can now configure your test or tests. To start the test you'll need to use:
+To take advantage of the Arduino Test Library include the !ArduinoTestSuite.h file at the top of your code. Because the test results are returned via the serial interface so for all tests you also need to include WProgram.h, and HardwareSerial.h. Once include you are free to include other libraries as need to perform your test or tests. In the setup you can now configure your test or tests. To start the test you'll need to use:
 {{{
 ATS_begin("Arduino","My bare bones tests.");
 }}}
