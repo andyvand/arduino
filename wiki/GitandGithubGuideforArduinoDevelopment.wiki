@@ -91,7 +91,7 @@ get checkout
 
 =Case 3: Fork Style Development =
 
-Setting up your environment for development:
+==Setting up your environment for development:==
   # Log into Github,  http://github.com
   # Go to the Arduino project
     http://github.com/arduino/Arduino
@@ -113,4 +113,53 @@ git merge upstream/master
   You ou can do a test of the merge. Like --dry-run in Subversion.
 {{{
 git merge --no-commit --no-ff upstream/master
+}}}
+  # Now  you are all set up to begin working
+
+==Decide what you’ll be working on ==
+  *Check the to do list http://github.com/arduino/Arduino/blob/master/todo.txt
+  *Check the issue list at http://code.google.com/p/arduino/issues/list
+
+Note the issue number related to the issue or task your working on. Put this in the comments you make as your work so you can keep track of what work you did related to a specific bug. It’s also handy at this point to think of a test or way of knowing your fix is working.
+
+Seriously consider working in a branch rather than in master all the time.
+
+==Start your day==
+  # Pull changes from upstream repository
+{{{
+git pull upstream master
+}}
+or
+{{{
+git fetch upstream/master
+git merge upstream/master
+}}}
+
+  # Edit, Build, Test
+  # Check status
+{{{
+git status
+}}}
+
+  # git add new files [http://stackoverflow.com/questions/572549/difference-of-git-add-a-and-git-add]
+{{{
+git add file1, file2
+git add .
+git add *
+git add -A
+}}}
+
+  # Check the files you wanted are added
+{{{
+git status 
+}}}
+
+  # Commit your changes
+{{{
+git commit -a -m “The are changes for issue nnnn and here’s what I did.”
+}}}
+
+  # Push your changes to your github repository
+{{{
+git push origin master
 }}}
