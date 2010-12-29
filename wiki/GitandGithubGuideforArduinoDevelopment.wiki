@@ -114,7 +114,7 @@ git remote add upstream git@github.com:arduino/Arduino.git
 git fetch upstream
 git merge upstream/master 
 }}}
-Instead of fully merging you can do a test of the merge. This is like --dry-run in Subversion.
+  You ou can do a test of the merge. Like --dry-run in Subversion.
 {{{
 git merge --no-commit --no-ff upstream/master
 }}}
