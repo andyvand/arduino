@@ -61,7 +61,7 @@ The following will go into detail about cases one, and two.
 
 *Setup:*
  {{{
-git clone URL
+git clone git@github.com:arduino/Arduino.git
 git checkout
 }}}
 
@@ -70,12 +70,14 @@ To clone the arduino repository and then check out "working" files.
 *Edit, build, test.*
  Just like normal.
 
-*Check in to your local repository.* 
+*Check in to your _local_ repository.* 
+
 This DOES NOT check into the official arduino repository:
 {{{
 git commit -a
 }}}
 *Prepare a patch.* 
+
 You will send the patch to the arduino team.
 {{{
 get diff
