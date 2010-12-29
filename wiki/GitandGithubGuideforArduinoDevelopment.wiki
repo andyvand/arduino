@@ -1,0 +1,22 @@
+#Git and Github guide for Arduino Development#
+
+Install git locally and create an account on github
+Check out Get Started with Git and Github
+http://help.github.com/
+
+For those with Subversion background there's a Crash Course:
+http://git.or.cz/course/svn.html
+
+==To get started you’ll need to:==
+#Take a [http://gitref.org/ quick crash course] on Git
+#[http://help.github.com/git-installation-redirect Install Git]
+#[http://help.github.com/key-setup-redirect Generate a keypair]
+**http://help.github.com/mac-key-setup/
+**http://help.github.com/linux-key-setup/
+**http://help.github.com/msysgit-key-setup/
+***You need create this keypair to authorize your commits by machine, and your user account.
+#Set your user and email in git
+{{{git config --global user.name "Your Name"
+git config --global user.email you@example.com}}}
+
+You are now up and running in with Github. There are several options at this point. You can create you're on repository. You can clone the Arduino project. You can fork the Arduino project.
