@@ -17,7 +17,8 @@ http://git.or.cz/course/svn.html
     ***You need create this keypair to authorize your commits by machine, and your user account.
   #[http://help.github.com/git-email-settings Set your user and email in git]
 
-{{{git config --global user.name "Your Name"
+{{{
+git config --global user.name "Your Name"
 git config --global user.email you@example.com
 }}}
 
