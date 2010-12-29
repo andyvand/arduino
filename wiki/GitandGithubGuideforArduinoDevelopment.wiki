@@ -129,6 +129,7 @@ Seriously consider working in a branch rather than in master all the time.
   {{{
 git pull upstream master
 }}}  
+  or
   {{{
 git fetch upstream/master
 git merge upstream/master
