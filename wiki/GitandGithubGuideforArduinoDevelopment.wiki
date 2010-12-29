@@ -51,3 +51,38 @@ http://help.github.com/forking/
 
   # Fork the project:
     * Create a fork of Arduino project, then git clone your fork, and start working. This technique allows for changes to submitted as patches, and/or pull requests. With this mode you can work towards long term goals, and major changes more easily. Also, it's fine for short term patches, and pulls. 
+
+
+
+The following will go into detail about cases one, and two.
+
+==Case 2: Patch Style Development==
+(Thanks to G. Carlini for creating the skeletion of this process)
+
+*Setup:*
+ {{{
+git clone URL
+git checkout
+}}}
+
+To clone the arduino repository and then check out "working" files. 
+
+*Edit, build, test.*
+ Just like normal.
+
+*Check in to your local repository.* 
+This DOES NOT check into the official arduino repository:
+{{{
+git commit -a
+}}}
+*Prepare a patch.* 
+You will send the patch to the arduino team.
+{{{
+get diff
+}}}
+
+*Update your repository with the latest changes from the arduino repository:*
+{{{
+git pull
+get checkout
+}}}
