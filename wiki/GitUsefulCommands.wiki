@@ -2,7 +2,7 @@
 
 = Git Usefull commands =
 
-The following content didn't make it into the Git and Github Development Guide
+The following content didn't make it into the [GitandGithubGuideforArduinoDevelopment Git and Github Development Guide]
 
 ==Collapse your commits for a pull request==
 Rebasing and applying your changes, then submitting that as a pull request
