@@ -152,7 +152,7 @@ git status
 }}}
   # Commit your changes
 {{{
-git commit -a -m “The are changes for issue nnnn and here’s what I did.”
+git commit -a -m “These are changes for issue nnnn and here’s what I did.”
 }}}
   # Push your changes to your github repository
 {{{
