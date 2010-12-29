@@ -88,3 +88,33 @@ get diff
 git pull
 get checkout
 }}}
+
+
+
+Case 3: Fork Style Development 
+
+
+
+Setting up your environment for development:
+# Go to the Arduino project
+  http://github.com/arduino/Arduino
+
+# Select "fork" of the Arduino project in the Github interface.
+# Then clone your fork
+{{{
+git clone git@github.com:username/Arduino.git
+}}}
+# Set the official Arduino repository as the upstream repository 
+{{{
+cd Arduino
+git remote add upstream git@github.com:arduino/Arduino.git
+}}}
+Fetch and merge changes from upstream
+{{{
+git fetch upstream
+git merge upstream/master 
+}}}
+Instead of fully merging you can do a test of the merge. This is like --dry-run in Subversion.
+{{{
+git merge --no-commit --no-ff upstream/master
+}}}
