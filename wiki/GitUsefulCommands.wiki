@@ -1,6 +1,6 @@
 #summary Git useful commands
 
-= Git Usefull commands =
+= Git Useful commands =
 
 The following content didn't make it into the [GitandGithubGuideforArduinoDevelopment Git and Github Development Guide]
 
