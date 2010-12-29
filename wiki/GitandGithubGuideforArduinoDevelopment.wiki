@@ -80,13 +80,13 @@ git commit -a
 
 You will send the patch to the arduino team.
 {{{
-get diff
+git diff
 }}}
 
 *Update your repository with the latest changes from the arduino repository:*
 {{{
 git pull
-get checkout
+git checkout
 }}}
 
 =Case 3: Fork Style Development =
@@ -129,7 +129,7 @@ Seriously consider working in a branch rather than in master all the time.
 {{{
 git pull upstream master
 }}
-or
+  or
 {{{
 git fetch upstream/master
 git merge upstream/master
