@@ -4,13 +4,9 @@
 
 The following content didn't make it into the Git and Github Development Guide
 
-= Details =
-
-
 ==Collapse your commits for a pull request==
 Rebasing and applying your changes, then submitting that as a pull request
 http://www.gitready.com/advanced/2009/02/11/pull-with-rebase.html
-
 
 ==The Stash, and staging changes==
 How to use the stash:
@@ -76,22 +72,28 @@ git --reset hard
 git checkout -b orign/master origin/master
 git pull origin master
 }}}
-Create anew branch that automatically tracks the upstream master
 
-
-
-Work on upstream branch other than master
+==Work on upstream branch other than master==
+{{{
 git checkout --track -b branch_name origin/remote_branch_name
+}}}
 
-Remove files from deleted from the files system, but not yet removed
+==Remove files from deleted from the files system, but not yet removed==
+{{{
 git add -u
-Remove directories and files
+}}}
 
+==Remove directories and files==
+{{{
 git clean -d
+}}}
 
-Resolve conflicts the quick way when you want all from "their" repository or all from "ours" repository
-
+==Resolve conflicts the quick way when you want all from "their" repository or all from "ours" repository==
 Take all the remote changes
-$ git checkout --theirs -- path/to/conflicted-file.txt
+{{{
+git checkout --theirs -- path/to/conflicted-file.txt
+}}}
 Take all of our changes
-$ git checkout --ours -- path/to/conflicted-file.txt
+{{{
+git checkout --ours -- path/to/conflicted-file.txt
+}}}
