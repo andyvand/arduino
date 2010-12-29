@@ -11,10 +11,10 @@ http://git.or.cz/course/svn.html
   #Take a [http://gitref.org/ quick crash course] on Git
   #[http://help.github.com/git-installation-redirect Install Git]
   #[http://help.github.com/key-setup-redirect Generate a keypair]
-  **http://help.github.com/mac-key-setup/
-  **http://help.github.com/linux-key-setup/
-  **http://help.github.com/msysgit-key-setup/
-  ***You need create this keypair to authorize your commits by machine, and your user account.
+    **http://help.github.com/mac-key-setup/
+    **http://help.github.com/linux-key-setup/
+    **http://help.github.com/msysgit-key-setup/
+    ***You need create this keypair to authorize your commits by machine, and your user account.
   #[http://help.github.com/git-email-settings Set your user and email in git]
 
 {{{git config --global user.name "Your Name"
