@@ -25,6 +25,24 @@ git config --global user.email you@example.com
 You are now up and running in with Github. At this point there are three major options for development.  You can create you're own repository. You can clone the Arduino project. You can fork the Arduino project.
 
 
+==Create your own repository==
+http://help.github.com/creating-a-repo
+
+==Clone the Arduino project==
+{{{
+git clone git@github.com:arduino/Arduino.git
+}}}
+If you don’t need the entire project history
+{{{
+git clone git@github.com:arduino/Arduino.git --depth 1
+}}}
+==Fork the Arduino for development==
+http://help.github.com/forking/
+
+
+
+==There are three development patterns to follow.==
+
   # Fix a single file:
     * Clone the repository, update to the master, edit a single file, and submit file to be considered for updating in the Bug System. The problem: This is really good for only quick and dirty single file fixes. It's also hard to track, and merge if the file get's changed by more than one person, and after the version is made.
 
