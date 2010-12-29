@@ -15,9 +15,10 @@ http://git.or.cz/course/svn.html
   **http://help.github.com/linux-key-setup/
   **http://help.github.com/msysgit-key-setup/
   ***You need create this keypair to authorize your commits by machine, and your user account.
-  #Set your user and email in git
+  #[http://help.github.com/git-email-settings Set your user and email in git]
 
 {{{git config --global user.name "Your Name"
-git config --global user.email you@example.com}}}
+git config --global user.email you@example.com
+}}}
 
 You are now up and running in with Github. There are several options at this point. You can create you're on repository. You can clone the Arduino project. You can fork the Arduino project.
