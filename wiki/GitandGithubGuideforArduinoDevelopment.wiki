@@ -48,8 +48,6 @@ http://help.github.com/forking/
   # Fork the project:
     * Create a fork of Arduino project, then git clone your fork, and start working. This technique allows for changes to submitted as patches, and/or pull requests. With this mode you can work towards long term goals, and major changes more easily. Also, it's fine for short term patches, and pulls. 
 
-The following will go into detail about cases one, and two.
-
 ==Case 1: Patch Style Development==
 (Thanks to G. Carlini for creating the skeletion of this process)
 
