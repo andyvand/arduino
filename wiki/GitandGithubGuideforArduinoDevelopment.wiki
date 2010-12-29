@@ -36,12 +36,12 @@ If you don’t need the entire project history
 {{{
 git clone git@github.com:arduino/Arduino.git --depth 1
 }}}
-==Fork the Arduino for development==
+==Fork the Arduino project for development==
 http://help.github.com/forking/
 
 
 
-==There are two development patterns to follow.==
+==There are two development patterns to follow==
 
   # Submit a patch:
     * Clone the repository, update to the master, make edits, and then use git diff, or git format-patch to generate a patch set that can be attached to the bug in the bug system. This is a nice trackable way to make changes and be able to effect multiple files. This is good for most cases, there is still a chance the some one else change would effect your patch, but it's less likely. Your changes are only stored on your local system.
