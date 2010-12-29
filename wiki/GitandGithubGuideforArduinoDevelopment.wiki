@@ -125,6 +125,17 @@ Note the issue number related to the issue or task your working on. Put this in 
 Seriously consider working in a branch rather than in master all the time.
 
 ==Start your day==
+  # Pull changes from upstream repository
+{{{
+git pull upstream master
+}}}  
+{{{
+git fetch upstream/master
+git merge upstream/master
+}}}
+
+
+
 
   # Edit, Build, Test
   # Check status
