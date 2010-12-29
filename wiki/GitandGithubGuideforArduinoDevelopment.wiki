@@ -158,3 +158,16 @@ git commit -a -m “These are changes for issue nnnn and here’s what I did.”
 {{{
 git push origin master
 }}}
+
+Check out your changes see if they work. If they look good you can submit a pull request. However, if the master repository which is upstream from you has changed, then you need to fetch the changes from upstream. 
+  *Pull changes from upstream repository
+  *Check that the changes work with your code
+
+Submit your changes to the master project
+Submit a pull request, a pull request needs to have the following info:
+  *Hyperlink to Google Code Issue Number
+  *Description of the change
+  *A test or way to verify that this fixed the issue or adds the feature
+
+Please report any typos or questions to the Arduino developer mailing list. There is an expectation to update, edit, and make this document more useful.
+
