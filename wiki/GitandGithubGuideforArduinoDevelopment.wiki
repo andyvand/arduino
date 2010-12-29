@@ -126,23 +126,18 @@ Seriously consider working in a branch rather than in master all the time.
 
 ==Start your day==
   # Pull changes from upstream repository
-{{{
+  {{{
 git pull upstream master
 }}}  
-{{{
+  {{{
 git fetch upstream/master
 git merge upstream/master
 }}}
-
-
-
-
   # Edit, Build, Test
   # Check status
 {{{
 git status
 }}}
-
   # git add new files [http://stackoverflow.com/questions/572549/difference-of-git-add-a-and-git-add]
 {{{
 git add file1, file2
@@ -150,17 +145,14 @@ git add .
 git add *
 git add -A
 }}}
-
   # Check the files you wanted are added
 {{{
 git status 
 }}}
-
   # Commit your changes
 {{{
 git commit -a -m “The are changes for issue nnnn and here’s what I did.”
 }}}
-
   # Push your changes to your github repository
 {{{
 git push origin master
