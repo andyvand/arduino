@@ -52,24 +52,22 @@ http://help.github.com/forking/
 (Thanks to G. Carlini for creating the skeletion of this process)
 
 *Setup:*
+To clone the arduino repository and then check out "working" files. 
  {{{
 git clone git@github.com:arduino/Arduino.git
 git checkout
 }}}
 
-To clone the arduino repository and then check out "working" files. 
 
 *Edit, build, test.*
  Just like normal.
 
 *Check in to your _local_ repository.* 
-
 This DOES NOT check into the official arduino repository:
 {{{
 git commit -a
 }}}
 *Prepare a patch.* 
-
 You will send the patch to the arduino team.
 {{{
 git diff
@@ -102,7 +100,7 @@ git remote add upstream git@github.com:arduino/Arduino.git
 git fetch upstream
 git merge upstream/master 
 }}}
-  You ou can do a test of the merge. Like --dry-run in Subversion.
+    You can do a test of the merge. Like --dry-run in Subversion.
 {{{
 git merge --no-commit --no-ff upstream/master
 }}}
