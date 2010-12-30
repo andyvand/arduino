@@ -109,8 +109,8 @@ git merge --no-commit --no-ff upstream/master
   # Now  you are all set up to begin working
 
 ==Decide what you’ll be working on ==
-  *Check the to do list http://github.com/arduino/Arduino/blob/master/todo.txt
-  *Check the issue list at http://code.google.com/p/arduino/issues/list
+  * Check the to do list http://github.com/arduino/Arduino/blob/master/todo.txt
+  * Check the issue list at http://code.google.com/p/arduino/issues/list
 
 Note the issue number related to the issue or task your working on. Put this in the comments you make as your work so you can keep track of what work you did related to a specific bug. It’s also handy at this point to think of a test or way of knowing your fix is working.
 
@@ -152,13 +152,13 @@ git push origin master
 }}}
 
 Check out your changes see if they work. If they look good you can submit a pull request. However, if the master repository which is upstream from you has changed, then you need to fetch the changes from upstream. 
-  *Pull changes from upstream repository
-  *Check that the changes work with your code
+  * Pull changes from upstream repository
+  * Check that the changes work with your code
 
 Submit your changes to the master project
 Submit a pull request, a pull request needs to have the following info:
-  *Hyperlink to Google Code Issue Number
-  *Description of the change
-  *A test or way to verify that this fixed the issue or adds the feature
+  * Hyperlink to Google Code Issue Number
+  * Description of the change
+  * A test or way to verify that this fixed the issue or adds the feature
 
 Please report any typos or questions to the Arduino developer mailing list. There is an expectation to update, edit, and make this document more useful.
