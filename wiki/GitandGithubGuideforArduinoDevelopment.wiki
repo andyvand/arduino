@@ -8,9 +8,9 @@ For those with Subversion background there's a Crash Course:
 http://git.or.cz/course/svn.html
 
 ==To get started you’ll need to:==
-  #Take a [http://gitref.org/ quick crash course] on Git
-  #[http://help.github.com/git-installation-redirect Install Git]
-  #[http://help.github.com/key-setup-redirect Generate a keypair]
+  # Take a [http://gitref.org/ quick crash course] on Git
+  # [http://help.github.com/git-installation-redirect Install Git]
+  # [http://help.github.com/key-setup-redirect Generate a keypair]
     **http://help.github.com/mac-key-setup/
     **http://help.github.com/linux-key-setup/
     **http://help.github.com/msysgit-key-setup/
