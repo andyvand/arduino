@@ -24,6 +24,8 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.speed: the speed (baud rate) avrdude should use when uploading sketches (e.g. "19200").
 
+* _BOARD_.upload.disable_flushing: set to true to disable manual flushing of the serial port from Java before avrdude is called to do the upload.
+
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
  * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  If this variable is specified (and not equal to "bootloader"), the _BOARD_.upload.protocol and _BOARD_.upload.speed variables are ignored.
