@@ -65,7 +65,7 @@ git checkout
 *Check in to your _local_ repository.* 
 This DOES NOT check into the official arduino repository:
 {{{
-git commit -a
+git commit -a -m "Summary of the changes being committed. Add the issue number."
 }}}
 *Prepare a patch.* 
 You will send the patch to the arduino team.
