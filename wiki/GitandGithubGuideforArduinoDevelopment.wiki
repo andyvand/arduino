@@ -75,8 +75,8 @@ git diff > issueNumber.patch
 
 *Update your repository with the latest changes from the arduino repository:*
 {{{
-git pull
-git checkout
+git fetch
+git merge upstream/master
 }}}
 
 =Case 2: Fork Style Development =
