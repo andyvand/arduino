@@ -70,7 +70,7 @@ git commit -a -m "Summary of the changes being committed. Add the issue number."
 *Prepare a patch.* 
 You will send the patch to the arduino team.
 {{{
-git diff
+git diff > issueNumber.patch
 }}}
 
 *Update your repository with the latest changes from the arduino repository:*
