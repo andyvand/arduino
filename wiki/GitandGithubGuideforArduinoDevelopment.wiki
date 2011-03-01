@@ -55,7 +55,7 @@ http://help.github.com/forking/
 To clone the arduino repository and then check out "working" files. 
  {{{
 git clone git@github.com:arduino/Arduino.git
-git checkout
+git checkout branchName
 }}}
 
 
