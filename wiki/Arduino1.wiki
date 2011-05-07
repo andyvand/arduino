@@ -2,9 +2,9 @@
 
 =Environment (IDE)=
 
-  * New file extension (.ino) and document icon.
-  * New toolbar icons: checkmark (verify) and arrow (upload).
-  * New color scheme.
+  * New file extension (.ino).
+  * New toolbar icons: checkmark (verify) and arrow (upload).  (Nicholas Zambetti)
+  * New color scheme, document icon, about image (ToDo).
   * Support for uploading sketches from within the IDE: hold shift while clicking upload or select "Upload Using Programmer" from the File menu.
   * Verbose output (during compilation or uploading) now enabled from within the preferences dialog.
 
