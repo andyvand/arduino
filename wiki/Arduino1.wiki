@@ -2,15 +2,19 @@
 
 =Environment (IDE)=
 
-* New file extension (.ino) and document icon.
-* New toolbar icons: checkmark (verify) and arrow (upload).
-* New color scheme.
+  * New file extension (.ino) and document icon.
+  * New toolbar icons: checkmark (verify) and arrow (upload).
+  * New color scheme.
 
 =Language (API)=
 
-* 
+  * Reimplementation of the SoftwareSerial library to support multiple ports (NewSoftSerial by Mikal Hart).
+  * Removed Matrix and Sprite libraries.
+  * Serial.print(byte) now prints the digits of the number as characters; use write() to send as a single byte.
+  * Removed the ability to say "client == NULL" or "client != NULL" from Ethernet library; use "if (client)" or "if (!client)" instead.
+  * 
 
 =Internals=
 
-* Renamed WProgram.h to Arduino.h.
-* Pin definitions separated from the core and stored in new pins/ sub-directory.
+  * Renamed WProgram.h to Arduino.h.
+  * Pin definitions separated from the core and stored in new pins/ sub-directory.  Specified by the _BOARD_.build.pins preference in boards.txt.
