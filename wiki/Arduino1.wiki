@@ -5,14 +5,25 @@
   * New file extension (.ino) and document icon.
   * New toolbar icons: checkmark (verify) and arrow (upload).
   * New color scheme.
+  * Support for uploading sketches from within the IDE: hold shift while clicking upload or select "Upload Using Programmer" from the File menu.
+  * Verbose output (during compilation or uploading) now enabled from within the preferences dialog.
 
 =Language (API)=
 
+  * Switching to non-blocking Serial writes with a transmit buffer.
+  * Serial.flush() now waits for transmission of outgoing data rather than discarding received incoming data.
   * Reimplementation of the SoftwareSerial library to support multiple ports (NewSoftSerial by Mikal Hart).
   * Removed Matrix and Sprite libraries.
   * Serial.print(byte) now prints the digits of the number as characters; use write() to send as a single byte.
   * Removed the ability to say "client == NULL" or "client != NULL" from Ethernet library; use "if (client)" or "if (!client)" instead.
-  * 
+  * Reimplementation of String class (Paul Stoffregen + additional modifications).
+  * Added support for Flash-based strings using the F("string") syntax.
+  * Added DHCP and DNS support to the Ethernet library (integration by Adrian McEwen).
+  * Modified UDP API.
+  * Addition of IPAddress class (Adrian McEwen).
+  * Modified Wire library to inherit from Stream (use read(), write(), print(), println(), etc).
+  * Adding support for multiple open files and directory iteration in SD card library (Limor Fried).
+  * Added serialEvent() function, called automatically on reception of serial data if it exists.  Also, serialEvent1(), serialEvent2(), and serialEvent3() on the Mega.
 
 =Internals=
 
