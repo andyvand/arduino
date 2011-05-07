@@ -1,0 +1,16 @@
+#summary Summary of changes in Arduino 1.0.
+
+=Environment (IDE)=
+
+* New file extension (.ino) and document icon.
+* New toolbar icons: checkmark (verify) and arrow (upload).
+* New color scheme.
+
+=Language (API)=
+
+* 
+
+=Internals=
+
+* Renamed WProgram.h to Arduino.h.
+* Pin definitions separated from the core and stored in new pins/ sub-directory.
