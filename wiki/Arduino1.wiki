@@ -1,5 +1,15 @@
 #summary Summary of changes in Arduino 1.0.
 
+=Download=
+
+A beta version of Arduino 1.0 is available:
+
+  * Windows: http://files.arduino.cc/downloads/arduino-1.0-beta1.zip
+  * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-beta1.dmg
+  * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-beta1.tgz
+  * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-beta1-64.tgz
+  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta1-src.tar.gz
+
 =Environment (IDE)=
 
   * New file extension (.ino).
