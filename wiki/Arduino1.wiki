@@ -2,13 +2,17 @@
 
 =Download=
 
-A beta version of Arduino 1.0 is available:
+A beta release of Arduino 1.0 is available:
 
   * Windows: http://files.arduino.cc/downloads/arduino-1.0-beta1.zip
   * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-beta1.dmg
   * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-beta1.tgz
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-beta1-64.tgz
   * Source: http://files.arduino.cc/downloads/arduino-1.0-beta1-src.tar.gz
+
+The source code is hosted in the new-extension branch on GitHub: https://github.com/arduino/Arduino/tree/new-extension
+
+If you find bugs, please open a [http://code.google.com/p/arduino/issues/list new issue].  For general problems or discussion, use the [http://mail.arduino.cc/mailman/listinfo/developers_arduino.cc developers mailing list].
 
 =Environment (IDE)=
 
