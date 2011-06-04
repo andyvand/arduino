@@ -7,7 +7,8 @@ For example the   ATS_General() tests you can make The basic idea is to tie ever
 The builtin tests, and the ATS_General() tests are designed assuming you have done this.
 
 Configuration for the standard Arduino:
-
+[https://sites.google.com/site/arduinotestsuitelibrary/arduino-test-suite/test-shield/TestShield328_bb.png]
 
 
 Configuration for the Mega:
+[https://sites.google.com/site/arduinotestsuitelibrary/arduino-test-suite/test-shield/TestShieldMega_bb.png]
