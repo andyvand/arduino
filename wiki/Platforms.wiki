@@ -24,7 +24,7 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.speed: the speed (baud rate) avrdude should use when uploading sketches (e.g. "19200").
 
-* _BOARD_.upload.disable_flushing: set to true to disable manual flushing of the serial port from Java before avrdude is called to do the upload.
+ * _BOARD_.upload.disable_flushing: set to true to disable manual flushing of the serial port from Java before avrdude is called to do the upload.
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
