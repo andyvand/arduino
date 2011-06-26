@@ -1,0 +1,16 @@
+#summary An overview of the platform architecture proposed for Arduino 1.0
+
+There are multiple levels of organization:
+
+  * _package_: a folder containing board definitions and code for one or more architectures
+  * _platform_: a microcontroller architecture (e.g. AVR)
+  * _core_: an implementation of the core Arduino API for a specific architecture
+
+They are organized like this:
+
+hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform):
+  * boards.txt: board definitions
+  * cores: one or more core folders
+  * libraries
+  * platform.txt: build process definitions (e.g. compiler command-line arguments)
+ 
