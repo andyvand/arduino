@@ -2,14 +2,17 @@
 
 There are multiple levels of organization:
 
-  * _package_: a folder containing board definitions and code for one or more architectures
-  * _platform_: a microcontroller architecture (e.g. AVR)
+  * _package_: a folder containing board definitions and code for one or more architectures (e.g. arduino)
+  * _platform_: a microcontroller architecture (e.g. avr)
 
 hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform):
   * boards.txt: board definitions
+  * bootloaders: 
   * cores: one or more folders containing implementations of the Arduino API
   * libraries
   * platform.txt: build process definitions (e.g. compiler command-line arguments)
   * programmers.txt: programmer definitions
   * tools: the toolchain binaries
   * variants: one or more folders containing code specific to particular hardware variations
+
+These elements refer to each other in various ways.  Each board definition specifies the core and variant used by the board.  These may be within another package, but not a different platform.  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ and _VARIANT_ values are assumed to be within the same package as the boards.txt file.  (*Should we also search for the variant within the core's package, if it's different than the one containing the boards.txt file?*)
