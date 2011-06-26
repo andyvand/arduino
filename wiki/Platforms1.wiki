@@ -12,7 +12,16 @@ hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform):
   * libraries
   * platform.txt: build process definitions (e.g. compiler command-line arguments)
   * programmers.txt: programmer definitions
+  * system: system libraries (e.g. those supplied by the microcontroller manufacturer)
   * tools: the toolchain binaries
   * variants: one or more folders containing code specific to particular hardware variations
 
 These elements refer to each other in various ways.  Each board definition specifies the core and variant used by the board.  These may be within another package, but not a different platform.  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ and _VARIANT_ values are assumed to be within the same package as the boards.txt file.  (*Should we also search for the variant within the core's package, if it's different than the one containing the boards.txt file?*)
+
+(*What happens if multiple packages attempt to supply a platform.txt file for the same platform?*)
+
+(*Can the tools/ folder be supplied by a different package than the platform.txt file?   What about the system/ folder?*)
+
+When compiling, we should first look for a library within the package containing the current board definition, then in the package containing the board's core (if different), then in the package containing the platform.txt file for the board's platform (if different).
+
+When compiling the user sketch, the include path should contain the core's folder (i.e. a sub-folder of the cores/ folder), the system/ folder, the variant's folder (i.e. a sub-folder of the variants/ folder), and any relevant library folders (i.e. sub-folders of the various libraries/ folders).  Source files contained within the sketch, the core's folder, the variant's folder, and the library folders, but not the system folder should be compiled with the sketch.  The sketch should be linked against any lib files in those same folders.  (That is, the files in the system folder should be pre-compiled before distribution of the package, with resulting lib files placed in the appropriate core or variant folders - not compiled with the sketch.)
