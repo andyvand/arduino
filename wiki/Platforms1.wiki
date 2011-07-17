@@ -18,7 +18,9 @@ hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform b
   * tools: the toolchain binaries
   * variants: one or more folders containing code specific to particular hardware variations
 
-These elements refer to each other in various ways.  Each board definition specifies the core and variant used by the board.  These may be within another package, but not a different platform.  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ and _VARIANT_ values are assumed to be within the same package as the boards.txt file.  (*Should we also search for the variant within the core's package, if it's different than the one containing the boards.txt file?*)
+These elements refer to each other in various ways.  Each board definition specifies the core and variant used by the board.  These may be within another package, but not a different platform.  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ and _VARIANT_ values are assumed to be within the same package as the boards.txt file.  The default package included with the Arduino software is unnamed and referred to with the empty string (e.g. ":arduino" refers to the arduino core in the default package, of the same platform as the boards.txt file).  
+
+(*Should we also search for the variant within the core's package, if it's different than the one containing the boards.txt file?*)
 
 (*What happens if multiple packages attempt to supply a platform.txt file for the same platform?*)
 
