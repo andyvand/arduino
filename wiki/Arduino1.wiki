@@ -33,7 +33,12 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Reimplementation of String class (Paul Stoffregen + additional modifications).
   * Added support for Flash-based strings using the F("string") syntax.
   * Added DHCP and DNS support to the Ethernet library (integration by Adrian !McEwen).
-  * Modified UDP API.
+  * Modified UDP API:
+    * beginPacket() / endPacket() for bracketing UDP packet construction
+    * Inheriting from Stream, using write(), print(), and println() for UDP packet construction
+    * parsePacket() for parsing incoming packets (and checking if there is one)
+    * available(), read(), peek() for reading bytes of incoming packet
+    * remoteIP(), remotePort() for information about incoming packet
   * Addition of IPAddress class (Adrian !McEwen).
   * Modified Wire library to inherit from Stream (use read(), write(), print(), println(), etc).
   * Adding support for multiple open files and directory iteration in SD card library (Limor Fried).
