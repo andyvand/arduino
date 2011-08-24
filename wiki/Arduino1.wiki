@@ -19,7 +19,9 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * New file extension (.ino).
   * New toolbar icons: checkmark (verify) and arrow (upload).  (Nicholas Zambetti)
   * New color scheme, document icon, about image (!ToDo).
-  * Support for uploading sketches from within the IDE: hold shift while clicking upload or select "Upload Using Programmer" from the File menu.
+  * Board name and serial port are shown in status line at the bottom of the editor.
+  * Progress bar shown during compilation and upload.
+  * Support for uploading sketches from within the IDE: hold shift while clicking upload or select "Upload Using Programmer" from the File menu.  Select programmer from the Tools menu of the IDE.
   * Verbose output (during compilation or uploading) now enabled from within the preferences dialog.
 
 =Language (API)=
@@ -29,6 +31,7 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Reimplementation of the !SoftwareSerial library to support multiple ports (!NewSoftSerial by Mikal Hart).
   * Removed Matrix and Sprite libraries.
   * Serial.print(byte) now prints the digits of the number as characters; use write() to send as a single byte.
+  * write(), print(), and println() now return a long instead of void (issue 551): number of bytes written or negative numbers on error.
   * Removed the ability to say "client == NULL" or "client != NULL" from Ethernet library; use "if (client)" or "if (!client)" instead.
   * Reimplementation of String class (Paul Stoffregen + additional modifications).
   * Added support for Flash-based strings using the F("string") syntax.
@@ -40,11 +43,12 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
     * available(), read(), peek() for reading bytes of incoming packet
     * remoteIP(), remotePort() for information about incoming packet
   * Addition of IPAddress class (Adrian !McEwen).
-  * Modified Wire library to inherit from Stream (use read(), write(), print(), println(), etc).
+  * Modified Wire library to inherit from Stream; i.e. to use read(), write(), print(), println(), etc.  Bracket calls to those functions with beginTransmission() and endTransmission().
   * Adding support for multiple open files and directory iteration in SD card library (Limor Fried).
   * Added serialEvent() function, called automatically on reception of serial data if it exists.  Also, serialEvent1(), serialEvent2(), and serialEvent3() on the Mega.
 
 =Internals=
 
   * Renamed WProgram.h to Arduino.h.
-  * Pin definitions separated from the core and stored in new pins/ sub-directory.  Specified by the _BOARD_.build.pins preference in boards.txt.
+  * Pin definitions separated from the core and stored in new variants/ sub-directory.  Specified by the _BOARD_.build.variant preference in boards.txt.
+  * Added macros / constants for getting information about the properties of the board (issue 490 and issue 495)
