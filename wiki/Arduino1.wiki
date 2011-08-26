@@ -2,13 +2,13 @@
 
 =Download=
 
-A beta release of Arduino 1.0 is available:
+The second beta release of Arduino 1.0 is available (as of August 26, 2011):
 
   * Windows: http://files.arduino.cc/downloads/arduino-1.0-beta2.zip
   * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-beta2.dmg
   * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-beta2.tgz
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-beta2-64.tgz
-  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta1-src.tar.gz
+  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta2-src.tar.gz
 
 The source code is hosted in the new-extension branch on GitHub: https://github.com/arduino/Arduino/tree/new-extension
 
@@ -32,7 +32,8 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Reimplementation of the !SoftwareSerial library to support multiple ports (!NewSoftSerial by Mikal Hart).
   * Removed Matrix and Sprite libraries.
   * Serial.print(byte) now prints the digits of the number as characters; use write() to send as a single byte.
-  * write(), print(), and println() now return a long instead of void (issue 551): number of bytes written or negative numbers on error.
+  * write(), print(), and println() now return size_t (unsigned int) instead of void (issue 551): number of bytes written.
+  * Added writeError(), clearWriteError(), and protected setWriteError() methods to Print; use to check for, clear, and set a write error flag.
   * Removed the ability to say "client == NULL" or "client != NULL" from Ethernet library; use "if (client)" or "if (!client)" instead.
   * Reimplementation of String class (Paul Stoffregen + additional modifications).
   * Added support for Flash-based strings using the F("string") syntax.
