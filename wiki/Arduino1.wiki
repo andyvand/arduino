@@ -20,7 +20,7 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * New toolbar icons: checkmark (verify) and arrow (upload).  (Nicholas Zambetti)
   * New color scheme, document icon, about image (!ToDo).
   * Board name and serial port are shown in status line at the bottom of the editor. (from Wiring)
-  * URLs in the sketch code are now clickable hyperlinks (issue 148)
+  * URLs in the sketch code are now clickable hyperlinks (issue 148) (Christian Maglie)
   * Progress bar shown during compilation and upload. (from Wiring)
   * Support for uploading sketches from within the IDE: hold shift while clicking upload or select "Upload Using Programmer" from the File menu.  Select programmer from the Tools menu of the IDE.
   * Verbose output (during compilation or uploading) now enabled from within the preferences dialog.
@@ -38,6 +38,7 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Reimplementation of String class (Paul Stoffregen + additional modifications).
   * Added support for Flash-based strings using the F("string") syntax.
   * Added DHCP and DNS support to the Ethernet library (integration by Adrian !McEwen).
+  * Renamed Ethernet Client, Server, and UDP classes to EthernetClient, EthernetServer, and EthernetUDP to allow for simultaneous use of other networking libraries.
   * Modified UDP API:
     * beginPacket() / endPacket() for bracketing UDP packet construction
     * Inheriting from Stream, using write(), print(), and println() for UDP packet construction
