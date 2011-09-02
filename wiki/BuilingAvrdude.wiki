@@ -8,7 +8,34 @@ Building libusb 0.1.12:
 ./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++" 
 
 make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.5" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc"
+
+sudo make install
+
+# rename /usr/local to /usr/local-libusb-0.1.12-ppc
+
+# repeat for -arch i386 (libusb 0.1.12 doesn't build on 64-bit systems)
+
+# lipo them together
 }}}
+
+
+Building avrdude 5.11 for i386:
+
+{{{
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" CC="/Developer-old/usr/bin/gcc"
+
+make
+}}}
+
+Building avrdude 5.11 for ppc:
+
+{{{
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" CC="/Developer-old/usr/bin/gcc"
+
+make CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch ppc" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch ppc" CC="/Developer-old/usr/bin/gcc" 
+}}}
+
+_We lie to configure about our architecture so it works, then override the architecture to do the actual compilation._
 
 
 Building libusb 1.0.8 (http://www.libusb.org/wiki/libusb-1.0):
