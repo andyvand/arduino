@@ -9,7 +9,7 @@ Building libusb 0.1.12:
 {{{
 ./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++"  --disable-shared
 
-make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.4" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc"
+make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.4" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.4" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.4"
 
 sudo make install
 
