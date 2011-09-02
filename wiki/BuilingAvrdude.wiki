@@ -23,23 +23,28 @@ for i in libusb-0.1.4.4.4.dylib libusb.a libusbpp-0.1.4.4.4.dylib libusbpp.a; do
 }}}
 
 
-Building avrdude 5.11 for i386:
+Building avrdude 5.11:
 
 {{{
-./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" CC="/Developer-old/usr/bin/gcc"
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" CC="/Developer-old/usr/bin/gcc"
 
 make
+
+mv avrdude avrdude-i386
+
+make clean
+
+# We lie to configure about our architecture so it works, then override the architecture to do the actual compilation.
+
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" CC="/Developer-old/usr/bin/gcc"
+
+make CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch ppc" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch ppc" CC="/Developer-old/usr/bin/gcc" 
+
+mv avrdude avrdude-ppc
+
+lipo -create avrdude-i386 avrdude-ppc -output avrdude
 }}}
 
-Building avrdude 5.11 for ppc:
-
-{{{
-./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" CC="/Developer-old/usr/bin/gcc"
-
-make CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch ppc" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch ppc" CC="/Developer-old/usr/bin/gcc" 
-}}}
-
-_We lie to configure about our architecture so it works, then override the architecture to do the actual compilation._
 
 
 Building libusb 1.0.8 (http://www.libusb.org/wiki/libusb-1.0):
