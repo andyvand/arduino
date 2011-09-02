@@ -9,7 +9,7 @@ Building libusb 0.1.12:
 {{{
 ./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++"  --disable-shared
 
-make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.5" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.5" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.5"
+make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.4" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.4" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc -mmacosx-version-min=10.4"
 
 sudo make install
 
@@ -17,7 +17,7 @@ sudo mv /usr/local /usr/local-libusb-0.1.12-ppc
 
 make clean
 
-make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch i386 -mmacosx-version-min=10.5" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,i386 -XCClinker -mmacosx-version-min=10.5" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch i386 -mmacosx-version-min=10.5"
+make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch i386 -mmacosx-version-min=10.4" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,i386 -XCClinker -mmacosx-version-min=10.4" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch i386 -mmacosx-version-min=10.4"
 
 sudo make install
 
@@ -28,7 +28,7 @@ for i in libusb.a libusbpp.a; do sudo lipo -create /usr/local/lib/$i /usr/local-
 Building avrdude 5.11:
 
 {{{
-./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-Wl,-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.5 -Wl,-arch,i386" CC="/Developer-old/usr/bin/gcc"
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" LDFLAGS="-Wl,-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.4 -Wl,-arch,i386" CC="/Developer-old/usr/bin/gcc"
 
 make
 
@@ -38,9 +38,9 @@ make clean
 
 # We lie to configure about our architecture so it works, then override the architecture to do the actual compilation.
 
-./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch i386" LDFLAGS="-Wl,-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.5 -Wl,-arch,i386" CC="/Developer-old/usr/bin/gcc"
+./configure CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch i386" LDFLAGS="-Wl,-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.4 -Wl,-arch,i386" CC="/Developer-old/usr/bin/gcc"
 
-make CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5 -arch ppc" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.5 -arch ppc" CC="/Developer-old/usr/bin/gcc" 
+make CFLAGS="-I/usr/local/include -isysroot /Developer-old/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.4 -arch ppc" LDFLAGS="-L/usr/local/lib -Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wl,-framework -Wl,IOKit -Wl,-framework -Wl,CoreFoundation -mmacosx-version-min=10.4 -arch ppc" CC="/Developer-old/usr/bin/gcc" 
 
 mv avrdude avrdude-ppc
 
