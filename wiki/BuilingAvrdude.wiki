@@ -7,7 +7,7 @@ It seems that avrdude 5.11 needs, if you want usb support, libusb 0.1.12 or libu
 Building libusb 0.1.12:
 
 {{{
-./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++" 
+./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++"  --disable-shared
 
 make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.4" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc"
 
