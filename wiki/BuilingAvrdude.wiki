@@ -21,7 +21,9 @@ make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch i386" LDFLAGS="-
 
 sudo make install
 
-for i in libusb-0.1.4.4.4.dylib libusb.a libusbpp-0.1.4.4.4.dylib libusbpp.a; do sudo lipo -create /usr/local/lib/$i /usr/local-libusb-0.1.12-ppc/lib/$i -output /usr/local/lib/$i; done
+sudo mv /usr/local /usr/local-libusb-0.1.12-i386
+
+for i in libusb.a libusbpp.a; do sudo lipo -create /usr/local-libusb-0.1.12-i386/lib/$i /usr/local-libusb-0.1.12-ppc/lib/$i -output /usr/local/lib/$i; done
 }}}
 
 
