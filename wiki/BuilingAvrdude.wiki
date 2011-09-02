@@ -1,0 +1,21 @@
+#summary One-sentence summary of this page.
+
+= Mac OS X =
+
+Building libusb 1.0.8 (http://www.libusb.org/wiki/libusb-1.0):
+
+{{{
+./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp"
+
+make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc" LDFLAGS="-syslibroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc"
+
+sudo make install
+
+# repeat for -arch i386 and -arch x86_64, moving previous one into its own directory first
+
+sudo lipo -create /usr/local-libusb-ppc/lib/libusb-1.0.a /usr/local-libusb-i386/lib/libusb-1.0.a /usr/local-libusb-x86_64/lib/libusb-1.0.a -output /usr/local/lib/libusb-1.0.a
+
+sudo lipo -create /usr/local-libusb-ppc/lib/libusb-1.0.0.dylib /usr/local-libusb-i386/lib/libusb-1.0.0.dylib /usr/local-libusb-x86_64/lib/libusb-1.0.0.dylib -output /usr/local/lib/libusb-1.0.0.dylib
+
+# copy over other files (include/, pkgconfig/, libusb-1.0.la) and recreate symlink from libusb-1.0.dylib to libusb-1.0.0.dylib
+}}}
