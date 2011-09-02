@@ -2,6 +2,15 @@
 
 = Mac OS X =
 
+Building libusb 0.1.12:
+
+{{{
+./configure CC="/Developer-old/usr/bin/gcc" CPP="/Developer-old/usr/bin/cpp" CXX="/Developer-old/usr/bin/g++" 
+
+make CFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc" LDFLAGS="-Wl,-syslibroot,/Developer-old/SDKs/MacOSX10.5.sdk -Wc,-arch,ppc -XCClinker -mmacosx-version-min=10.5" CXXFLAGS="-isysroot /Developer-old/SDKs/MacOSX10.5.sdk -arch ppc"
+}}}
+
+
 Building libusb 1.0.8 (http://www.libusb.org/wiki/libusb-1.0):
 
 {{{
