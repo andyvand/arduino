@@ -4,6 +4,8 @@
 
 It seems that avrdude 5.11 needs, if you want usb support, libusb 0.1.12 or libusb 1.0.? with the libusb compat wrapper.  We use libusb-0.1.12 here.  Note that libusb-0.1.12 doesn't compile on 64-bit Mac OS X (some lines in the code assume 32-bit ints).
 
+See also: http://developer.apple.com/library/mac/#documentation/Porting/Conceptual/PortingUnix/compiling/compiling.html and http://developer.apple.com/library/mac/#documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html
+
 Building libusb 0.1.12:
 
 {{{
