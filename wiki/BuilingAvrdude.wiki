@@ -86,10 +86,6 @@ To build avrdude:
 Patch the Makefile:
 
 {{{
-237c237
-< LDFLAGS = -L /usr/local/lib -lusb -static
----
-> LDFLAGS = -L /usr/local/lib -lusb
 351c351
 < avrdude_LDADD = $(top_builddir)/$(noinst_LIBRARIES) -lusb   -lhid -lsetupapi -lm
 ---
