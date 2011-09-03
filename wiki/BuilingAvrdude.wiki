@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Building avrdude for Arduino.
 
 = Mac OS X =
 
@@ -67,4 +67,37 @@ sudo lipo -create /usr/local-libusb-ppc/lib/libusb-1.0.a /usr/local-libusb-i386/
 sudo lipo -create /usr/local-libusb-ppc/lib/libusb-1.0.0.dylib /usr/local-libusb-i386/lib/libusb-1.0.0.dylib /usr/local-libusb-x86_64/lib/libusb-1.0.0.dylib -output /usr/local/lib/libusb-1.0.0.dylib
 
 # copy over other files (include/, pkgconfig/, libusb-1.0.la) and recreate symlink from libusb-1.0.dylib to libusb-1.0.0.dylib
+}}}
+
+= Windows =
+
+Download libusb-win32 device bin (0.1.12.2): http://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/0.1.12.2/libusb-win32-device-bin-0.1.12.2.tar.gz/download
+
+Copy:
+
+libusb.a to /usr/local/lib
+usb.h to /usr/local/include
+
+To build avrdude:
+{{{
+./configure CFLAGS="-I /usr/local/include" LDFLAGS="-L /usr/local/lib -lusb"
+}}}
+
+Patch the Makefile:
+
+{{{
+237c237
+< LDFLAGS = -L /usr/local/lib -lusb -static
+---
+> LDFLAGS = -L /usr/local/lib -lusb
+351c351
+< avrdude_LDADD = $(top_builddir)/$(noinst_LIBRARIES) -lusb   -lhid -lsetupapi -lm
+---
+> avrdude_LDADD = $(top_builddir)/$(noinst_LIBRARIES) -lusb   -lhid -lsetupapi
+}}}
+
+Run:
+
+{{{
+make
 }}}
