@@ -50,9 +50,13 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Adding support for multiple open files and directory iteration in SD card library (Limor Fried).
   * Added serialEvent() function, called automatically on reception of serial data if it exists.  Also, serialEvent1(), serialEvent2(), and serialEvent3() on the Mega.
   * Added find(), findUntil(), parseInt(), parseFloat(), readBytes(), readBytesUntil(), and setTimeout() to Stream (issue 458 - Michael Margolis).
+  * Updated Firmata to version 2.3 (r71): analog inputs now numbered from 14 (not 16) when used as digital pins.
 
 =Internals=
 
   * Renamed WProgram.h to Arduino.h.
   * Pin definitions separated from the core and stored in new variants/ sub-directory.  Specified by the _BOARD_.build.variant preference in boards.txt.
   * Added macros / constants for getting information about the properties of the board (issue 490 and issue 495)
+
+= Tools =
+  * Updated avrdude to 5.11 (and switched to arduino programmer type from stk500).
