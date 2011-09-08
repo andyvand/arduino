@@ -33,7 +33,7 @@ If you find bugs, please open a [http://code.google.com/p/arduino/issues/list ne
   * Removed Matrix and Sprite libraries.
   * Serial.print(byte) now prints the digits of the number as characters; use write() to send as a single byte.
   * write(), print(), and println() now return size_t (unsigned int) instead of void (issue 551): number of bytes written.
-  * write(char *) in Print is no longer virtual, so subclasses of Print or Stream can't (but also don't need to) override it.
+  * write(str) in Print is no longer virtual, so subclasses of Print or Stream can't (but also don't need to) override it.
   * Added getWriteError(), clearWriteError(), and protected setWriteError() methods to Print; use to check for, clear, and set a write error flag.
   * Removed the ability to say "client == NULL" or "client != NULL" from Ethernet library; use "if (client)" or "if (!client)" instead.
   * Reimplementation of String class (Paul Stoffregen + additional modifications).
