@@ -8,7 +8,7 @@ The fourth beta release of Arduino 1.0 is available (as of September 9, 2011):
   * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-beta4.dmg
   * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-beta4.tgz
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-beta4-64.tgz
-  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta2-src.tar.gz
+  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta4-src.tar.gz
 
 The source code is hosted in the new-extension branch on GitHub: https://github.com/arduino/Arduino/tree/new-extension
 
