@@ -2,13 +2,13 @@
 
 =Download=
 
-The fourth beta release of Arduino 1.0 is available (as of September 9, 2011):
+The release candidate of Arduino 1.0 is available (as of September 17, 2011):
 
   * Windows: http://files.arduino.cc/downloads/arduino-1.0-rc1.zip
   * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-rc1.dmg
   * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-rc1.tgz
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-beta4-64.tgz
-  * Source: http://files.arduino.cc/downloads/arduino-1.0-beta4-src.tar.gz
+  * Source: http://files.arduino.cc/downloads/arduino-1.0-rc1-src.tar.gz
 
 The source code is hosted in the new-extension branch on GitHub: https://github.com/arduino/Arduino/tree/new-extension
 
