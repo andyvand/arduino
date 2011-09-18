@@ -29,7 +29,7 @@ These elements refer to each other in various ways.  Each board definition speci
   * Each package can include it's own tools folder but if one is not supplied it defaults to the same as distributed by Arduino.
 
 When compiling, we should first look for a library within the package containing the current board definition, then in the package containing the board's core (if different), then in the package containing the platform.txt file for the board's platform (if different).
-  *This would follow the preferences hiearchy.  Preferences.txt, Platforms.txt, Boards.txt, sketchpreferences.txt
+  * This would follow the preferences hiearchy.  Preferences.txt, Platforms.txt, Boards.txt, sketchpreferences.txt
 
 
 When compiling the user sketch, the include path should contain the core's folder (i.e. a sub-folder of the cores/ folder), the system/ folder, the variant's folder (i.e. a sub-folder of the variants/ folder), and any relevant library folders (i.e. sub-folders of the various libraries/ folders).  Source files contained within the sketch, the core's folder, the variant's folder, and the library folders, but not the system folder should be compiled with the sketch.  The sketch should be linked against any lib files in those same folders.  (That is, the files in the system folder should be pre-compiled before distribution of the package, with resulting lib files placed in the appropriate core or variant folders - not compiled with the sketch.
