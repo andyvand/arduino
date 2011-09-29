@@ -18,11 +18,11 @@ hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform b
   * tools: the toolchain binaries
   * variants: one or more folders containing code specific to particular hardware variations
 
-The boards.txt file contains these preferences:
+These elements refer to each other in various ways.  For example, the boards.txt file contains these preferences:
   * _BOARD_.build.core
   * _BOARD_.build.variant
 
-These elements refer to each other in various ways.  Each board definition specifies the core and variant used by the board.  These may be within another package, but not a different platform.  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ and _VARIANT_ values are assumed to be within the same package as the boards.txt file. 
+These may be within another package, but not a different platform (i.e. you can't have an ARM boards.txt file that refers to an AVR core).  The syntax is _PACKAGE_:_CORE_ or _PACKAGE_:_VARIANT_.  The _PACKAGE_: is optional; if omitted, the _CORE_ or _VARIANT_ value is assumed to be within the same package as the boards.txt file. 
 
 In general, the search order (e.g. for libraries) should be:
   # the package containing the boards.txt file defining the active board
