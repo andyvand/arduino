@@ -10,7 +10,7 @@ The second release candidate of Arduino 1.0 is available (as of October 25, 2011
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-rc2-64.tgz
   * Source: http://files.arduino.cc/downloads/arduino-1.0-rc1-src.tar.gz
 
-The source code is hosted in the new-extension branch on GitHub: https://github.com/arduino/Arduino/tree/new-extension
+The source code is hosted in the new-extension branch on !GitHub: https://github.com/arduino/Arduino/tree/new-extension
 
 If you find bugs, please open a [http://code.google.com/p/arduino/issues/list new issue].  For general problems or discussion, use the [http://mail.arduino.cc/mailman/listinfo/developers_arduino.cc developers mailing list].
 
