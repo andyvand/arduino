@@ -6,7 +6,7 @@ The second release candidate of Arduino 1.0 is available (as of October 25, 2011
 
   * Windows: http://files.arduino.cc/downloads/arduino-1.0-rc2.zip
   * Mac OS X: http://files.arduino.cc/downloads/arduino-1.0-rc2.dmg
-  * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-rc1.tgz
+  * Linux (32-bit): http://files.arduino.cc/downloads/arduino-1.0-rc2.tgz
   * Linux (64-bit): http://files.arduino.cc/downloads/arduino-1.0-rc1-64.tgz
   * Source: http://files.arduino.cc/downloads/arduino-1.0-rc1-src.tar.gz
 
