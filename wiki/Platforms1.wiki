@@ -1,4 +1,4 @@
-#summary An overview of the platform architecture proposed for Arduino 1.0
+#summary An overview of the platform architecture proposed for post-Arduino 1.0
 
 There are multiple levels of organization:
 
