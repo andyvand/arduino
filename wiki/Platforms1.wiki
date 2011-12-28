@@ -18,6 +18,14 @@ hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform b
   * tools: the toolchain binaries
   * variants: one or more folders containing code specific to particular hardware variations
 
+For example, (if it were installed as third-party hardware) the Arduino hardware would be organized like this:
+  * hardware/arduino/ - the root for the Arduino hardware
+  * hardware/arduino/avr/ - contains the definitions for the AVR-based Arduino boards
+  * hardware/arduino/avr/cores/arduino/ - the core providing the Arduino API for AVR boards
+  * hardware/arduino/avr/cores/c/ - a hypothetical core providing support for straight AVR C on Arduino boards
+  * hardware/arduino/avr/cores/rtos/ - a hypothetical core providing support for an RTOS on Arduino boards
+  * hardware/arduino/arm/ - support for the ARM-based Arduino boards
+
 These elements refer to each other in various ways.  For example, the boards.txt file contains these preferences:
   * _BOARD_.build.core
   * _BOARD_.build.variant
