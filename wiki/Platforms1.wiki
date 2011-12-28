@@ -7,7 +7,7 @@ There are multiple levels of organization:
 
 The idea is that third-parties can supply a single package which provide support for all their hardware, across multiple microcontroller architectures.  
 
-hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform but possibly referring to other packages):
+Within the user's Arduino sketchbook folder, hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform but possibly referring to other packages):
   * boards.txt: board definitions
   * bootloaders: 
   * cores: one or more folders containing implementations of the Arduino API
@@ -25,6 +25,8 @@ For example, (if it were installed as third-party hardware) the Arduino hardware
   * hardware/arduino/avr/cores/c/ - a hypothetical core providing support for straight AVR C on Arduino boards
   * hardware/arduino/avr/cores/rtos/ - a hypothetical core providing support for an RTOS on Arduino boards
   * hardware/arduino/arm/ - support for the ARM-based Arduino boards
+
+Note that the libraries sub-folder of the Arduino sketchbook folder will still be supported (for libraries not associated with specific hardware).
 
 These elements refer to each other in various ways.  For example, the boards.txt file contains these preferences:
   * _BOARD_.build.core
