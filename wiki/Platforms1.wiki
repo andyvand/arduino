@@ -41,3 +41,7 @@ In general, the search order (e.g. for libraries) should be:
   # a package containing a platform.txt file for the active board's platform
 
 When compiling the user sketch, the include path should contain the core's folder (i.e. a sub-folder of the cores/ folder), the system/ folder, the variant's folder (i.e. a sub-folder of the variants/ folder), and any relevant library folders (i.e. sub-folders of the various libraries/ folders).  Source files contained within the sketch, the core's folder, the variant's folder, and the library folders, but not the system folder should be compiled with the sketch.  The sketch should be linked against any lib files in those same folders.  (That is, the files in the system folder should be pre-compiled before distribution of the package, with resulting lib files placed in the appropriate core or variant folders - not compiled with the sketch.
+
+Questions:
+  * Should the per-board compilation flags in boards.txt override or be appended (or pre-pended) to those in the platform.txt file?  (We might be able to override relevant flags by appearing before or after them in the command line.)
+  * What about core files that are shared between platforms (e.g. String, Stream)?  Where do they go?
