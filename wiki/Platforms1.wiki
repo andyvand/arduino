@@ -45,3 +45,4 @@ When compiling the user sketch, the include path should contain the core's folde
 Questions:
   * Should the per-board compilation flags in boards.txt override or be appended (or pre-pended) to those in the platform.txt file?  (We might be able to override relevant flags by appearing before or after them in the command line.)
   * What about core files that are shared between platforms (e.g. String, Stream)?  Where do they go?
+  * How does the upload process get specified?
