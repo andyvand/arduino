@@ -28,7 +28,7 @@ Variables controlling the upload process:
 
  * _BOARD_.upload.maximum_size: the maximum size for a sketch on the board (dependent on the chip and the size of the bootloader).
 
- * _BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  If this variable is specified (and not equal to "bootloader"), the _BOARD_.upload.protocol and _BOARD_.upload.speed variables are ignored.
+ * ~~_BOARD_.upload.using: the name of a programmer to use instead of the bootloader when uploading sketches to the board (optional).  The value should be the prefix of a key in the programmers.txt file (e.g. "usbtinyisp") or a value in the format _platform_:_programmer_ where _platform_ is the name of the folder of another platform (e.g. the built-in "arduino" platform) and _programmer_ is the key for a programmer in that platform's programmers.txt.  If this variable is specified (and not equal to "bootloader"), the _BOARD_.upload.protocol and _BOARD_.upload.speed variables are ignored.~~ (no longer supported in Arduino 1.0)
 
 Variables controlling the process of burning a bootloader onto the board:
 
@@ -38,9 +38,9 @@ Variables controlling the process of burning a bootloader onto the board:
 
  * _BOARD_.bootloader.extended_fuses: the byte to write to the extended fuses (e.g. 0x05).  Note that avrdude (used by Arduino) uses 0 for unused fuse bits, whereas AVR Studio uses 1; this byte's value may need to be changed when moving between the two.
 
- * _BOARD_.bootloader.path: the location of the folder containing the bootloader .hex file.  This may be the name of a sub-folder of the *bootloader* sub-folder of the board's platform, or a value of the form _platform_:_path_, where _platform_ is the name of the folder of another platform, and _path_ is a sub-folder of its *bootloaders* sub-folder.
+ * _BOARD_.bootloader.path: the location of the folder containing the bootloader .hex file.  This may be the name of a sub-folder of the *bootloader* sub-folder of the board's platform, or a value of the form _platform_:_path_, where _platform_ is the name of the folder of another platform, and _path_ is a sub-folder of its *bootloaders* sub-folder.  _Note:_ the bootloader file and path are optional; if omitted, the "burn bootloader" command will simply set the fuses.
 
- * _BOARD_.bootloader.file: the name of the .hex file (without any folder names or paths).
+ * _BOARD_.bootloader.file: the name of the .hex file (without any folder names or paths).  _Note:_ the bootloader file and path are optional; if omitted, the "burn bootloader" command will simply set the fuses.
 
  * _BOARD_.bootloader.unlock_bits: the byte to write to the lock fuses of the microcontroller to unlock it before burning the bootloader.
 
@@ -56,7 +56,7 @@ A core is a set of .c, .cpp, and .h files that implement the basic Arduino funct
 
 A core should include at least the following files:
 
- * WProgram.h: an #include statement for this header file is automatically inserted into each sketch as part of the BuildProcess.  It should contain declarations for the functions, constants, and types in the core.
+ * Arduino.h: an #include statement for this header file is automatically inserted into each sketch as part of the BuildProcess.  It should contain declarations for the functions, constants, and types in the core.  (Prior to Arduino 1.0, WProgram.h was used instead.)
 
  * main.cpp: a conventional location in which to specify the *main()* function of the sketch.  It should call *setup()* once and *loop()* over and over again.
 
