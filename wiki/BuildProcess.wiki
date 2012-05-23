@@ -32,10 +32,10 @@ These .o files are then linked together into a static library and the main sketc
 
 The .hex file is the final output of the compilation which is then uploaded to the board.  
 
-If build.verbose is set to true in the main preferences file, the complete command line of each external command executed as part of the build process will be printed in the editor console.
+If verbose output during compilation is checked in the Preferences dialog, the complete command line of each external command executed as part of the build process will be printed in the editor console.
 
 = Uploading =
 
 Sketches are uploaded by avrdude.  The upload process is also controlled by variables in the boards and main preferences files.  See the [Platforms platforms] page for details.
 
-If upload.verbose is set to true in the main preferences file, or if the shift key is held down when clicking the *Upload* toolbar button, debugging information will be output to the editor console, including avrdude command lines and verbose output.
+If verbose output during upload is checked in the Preferences dialog, debugging information will be output to the editor console, including avrdude command lines and verbose output.
