@@ -2,7 +2,7 @@
 
 = Philosophy =
 
-Arduino aims to make technology accessible and useful to new audiences such as artists, designers, or hobbyists.  To that end, it strives for the dual goals of simplicity and flexibility.  The development efforts focus on that which allows people to get their work done.  It also attempts to provide a well-designed, maintainable, and stable platform for the future.
+Arduino aims to make technology accessible and useful to new audiences such as artists, designers, or hobbyists.  The development efforts focus on that which allows people to get their work done.  To that end, it strives for the dual goals of simplicity (so people can actually use the platform) and robustness (so they create things that work).  It also attempts to provide a well-designed, maintainable, and stable platform for the future.
 
 This means:
 
@@ -16,28 +16,13 @@ This means:
 
 but also accepting the inevitable presence of bugs, especially if they affect a small percentage of users and are easily worked around.
 
-= Tools = 
-
-== Source Code ==
-The [http://github.com/arduino/Arduino Arduino source code] is stored in a Git repository hosted by GitHub.  See BuildingArduino for instructions for getting and building the source.
-
-== Developers Mailing List ==
-The [http://mail.arduino.cc/mailman/listinfo/developers_arduino.cc developers mailing list] (on arduino.cc) hosts discussions on the design of the Arduino development environment and the API for the core Arduino libraries.  Changes to either of these can be entered into the issue tracker, but should be discussed on the mailing list.  The list archives then serve as a history of the rationale behind the design decisions embodied in the software.
-
-== Issue Tracking ==
-The [http://code.google.com/p/arduino/issues/list issue tracker] (hosted by Google Code) holds the list of individual items to be addressed in the Arduino software.  Straightforward tasks (e.g. bug fixes) can be entered in the issue tracker without separate discussion on the mailing list.  Design changes can be tracked there but should also be discussed on the developers mailing list.
-
-
-= Relationship with Processing =
-
-Arduino draws heavily on [http://processing.org/ Processing]: in philosophy, in the API of the core libraries, and in the design and implementation of the development environment (IDE).  Changes to those aspects of the IDE that are shared with Processing should be made there first, and then merged into the Arduino code base.  This makes it easier for the two projects to continue to share code, and allows Arduino to benefit from the design of the Processing development environment.  
-
-
 = Way to Contribute = 
+
+There are many ways to contribute to the Arduino development.  Please read the following suggestions to help make the process smooth and productive.
 
 == Reporting Bugs ==
 
-If you've found a bug in the Arduino software, please add it to the issue tracker.  The more specific you can be about the steps that lead to the problem, the better.  If the bug occurs in an Arduino sketch, try to find a minimal, self-contained piece of code that demonstrates the problem (and attach it).  
+If you've found a bug in the Arduino software, please add it to the [http://code.google.com/p/arduino/issues/list issue tracker].  The more specific you can be about the steps that lead to the problem, the better.  If the bug occurs in an Arduino sketch, try to find a minimal, self-contained piece of code that demonstrates the problem (and attach it).  
 
 If a bug has been reported in the forums, feel free to copy it into the issue tracker.  Summarize the issue and link to the original forum posting.
 
@@ -47,11 +32,11 @@ When submitting patches, address a single issue.  Bug fixes should be kept separ
 
 == Optimizing Code ==
 
-Optimization tends to be a lower priority than bug fixes or new features.  Occasionally, however, improved performance makes possible new functionality.  Provide use cases for proposed optimizations.  Remember that changes need to be tested on multiple micro-controllers and that maintainability of the code is important.
+Optimization tends to be a lower priority than bug fixes or new features, although performance is important for many situations.  Provide use cases for proposed optimizations and quantify the performance improvement achieved.  Remember that changes need to be tested on multiple microcontrollers and that maintainability of the code is important.
 
 == Proposing Design Changes ==
 
-Design changes (to the Arduino environment or core libraries) should be discussed on the developers mailing list.  Include use cases for the proposed change; these provide context and rationale.  
+Design changes (to the Arduino environment or core libraries) should be discussed on the developers mailing list.  Include use cases for the proposed change; these provide context and rationale.  Please discuss proposed changes before spending lots of time implementing them; it's much easier to adjust the design before the code is written.  We're unlikely to include changes we don't agree with, regardless of how much work you've put into them.  
 
 == Writing Libraries ==
 
@@ -62,3 +47,20 @@ Libraries are essential for extending the functionality of Arduino.  A few key l
 == Creating Examples ==
 
 == Testing ==
+
+
+= Tools = 
+
+== Source Code ==
+The [http://github.com/arduino/Arduino Arduino source code] is stored in a Git repository hosted by !GitHub.  See BuildingArduino for instructions for getting and building the source.
+
+== Developers Mailing List ==
+The [http://mail.arduino.cc/mailman/listinfo/developers_arduino.cc developers mailing list] (on arduino.cc) hosts discussions on the design of the Arduino development environment and the API for the core Arduino libraries.  Changes to either of these can be entered into the issue tracker, but should be discussed on the mailing list.  The list archives then serve as a history of the rationale behind the design decisions embodied in the software.
+
+== Issue Tracking ==
+The [http://code.google.com/p/arduino/issues/list issue tracker] (hosted by Google Code) holds the list of individual items to be addressed in the Arduino software.  Straightforward tasks (e.g. bug fixes) can be entered in the issue tracker without separate discussion on the mailing list.  Design changes can be tracked there but should also be discussed on the developers mailing list.
+
+
+= Relationship with Processing =
+
+Arduino draws heavily on [http://processing.org/ Processing]: in philosophy, in the API of the core libraries, and in the design and implementation of the development environment (IDE).  For functionality that exists in both Processing and Arduino, we follow Processing's lead in terms of design and implementation.  
