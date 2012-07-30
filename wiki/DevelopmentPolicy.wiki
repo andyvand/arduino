@@ -63,4 +63,4 @@ The [http://code.google.com/p/arduino/issues/list issue tracker] (hosted by Goog
 
 = Relationship with Processing =
 
-Arduino draws heavily on [http://processing.org/ Processing]: in philosophy, in the API of the core libraries, and in the design and implementation of the development environment (IDE).  For functionality that exists in both Processing and Arduino, we follow Processing's lead in terms of design and implementation.  
+Arduino draws heavily on [http://processing.org/ Processing]: in philosophy, in the API of the core libraries, and in the design and implementation of the development environment (IDE).  For functionality that exists in both Processing and Arduino, we follow Processing's lead in terms of design and implementation.  If you're looking to change something in Arduino that's already been updated in Processing, please take a look at what they've done first and, if possible, use their approach in Arduino as well.
