@@ -30,6 +30,8 @@ If a bug has been reported in the forums, feel free to copy it into the issue tr
 
 When submitting patches, address a single issue.  Bug fixes should be kept separate from optimizations (which tend to be of lower priority) and API changes (which should be discussed before inclusion).  Match the indentation and style of the rest of the file.  Resist the temptation to rewrite an entire module while fixing a bug.  Don't make unrelated formatting changes elsewhere in the code.  Don't include a commented-out version of the previous version of the code.  Don't add a comment with your name and the date of changes.  The more changes you include in a patch, the more difficult it is to review and the less likely it is to be applied.  
 
+Please note that the Arduino core libraries support many boards and processors. When fixing or adding functionality for one of them, it's easy to break something on the others. Please test your changes on as many processors as possible. Even if you don't have a particular board, try compiling your patch for it to make sure that you haven't introduced any errors.
+
 == Optimizing Code ==
 
 Optimization tends to be a lower priority than bug fixes or new features, although performance is important for many situations.  Provide use cases for proposed optimizations and quantify the performance improvement achieved.  Remember that changes need to be tested on multiple microcontrollers and that maintainability of the code is important.
