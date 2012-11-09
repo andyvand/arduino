@@ -1,30 +1,45 @@
-#summary An overview of the platform architecture proposed for post-Arduino 1.0
+#summary An overview of the platform architecture proposed for Arduino 1.5
 
-There are multiple levels of organization:
+*An overview of the platform architecture proposed for Arduino 1.5*
 
-  * _package_: a folder containing board definitions and code for one or more architectures (e.g. arduino)
-  * _platform_: a microcontroller architecture (e.g. avr)
+The hardware folder is split into multiple levels of organization:
+
+  * _package_ (or better packager): a folder containing board definitions and code for one or more architectures (e.g. arduino)
+  * _platform_: a microcontroller architecture (e.g. avr or sam)
+  * _core_: a core for a single platform (e.g. arduino)
 
 The idea is that third-parties can supply a single package which provide support for all their hardware, across multiple microcontroller architectures.  
 
 Within the user's Arduino sketchbook folder, hardware/_PACKAGE_/_PLATFORM_/ contains (all targeting the containing platform but possibly referring to other packages):
-  * boards.txt: board definitions
-  * bootloaders: 
-  * cores: one or more folders containing implementations of the Arduino API
-  * libraries
-  * platform.txt: build process definitions (e.g. compiler command-line arguments)
-  * programmers.txt: programmer definitions
-  * system: system libraries (e.g. those supplied by the microcontroller manufacturer)
-  * tools: the toolchain binaries
-  * variants: one or more folders containing code specific to particular hardware variations
+  * a _boards.txt_ file containing boards definitions
+  * a _cores_ folder containing one or more folders with the implementation of the Arduino API
+  * a _platform.txt_ file that contains build process definitions (e.g. compiler and command-line arguments)
+  * a _programmers.txt_ file with programmer definitions
+  * a _system_ folder containing system libraries (e.g. those supplied by the microcontroller manufacturer)
+  * a _tools_ folder containing the toolchain binaries
+  * a _variants_ folder, containing one or more folders with code specific to particular hardware variations
+  * a _bootloaders_ folder
+  * a _libraries_ folder
 
-For example, (if it were installed as third-party hardware) the Arduino hardware would be organized like this:
-  * hardware/arduino/ - the root for the Arduino hardware
-  * hardware/arduino/avr/ - contains the definitions for the AVR-based Arduino boards
-  * hardware/arduino/avr/cores/arduino/ - the core providing the Arduino API for AVR boards
-  * hardware/arduino/avr/cores/c/ - a hypothetical core providing support for straight AVR C on Arduino boards
-  * hardware/arduino/avr/cores/rtos/ - a hypothetical core providing support for an RTOS on Arduino boards
-  * hardware/arduino/arm/ - support for the ARM-based Arduino boards
+This means that to update an existing 1.0 core you need to move, for example, all files contained in hardware/arduino/ to a new hardware/arduino/avr/ folder.
+
+*Example*
+
+If the Arduino hardware folder were installed as third-party hardware folder, it would be organized like this:
+  * hardware/*arduino*/ - the root for the Arduino hardware
+  * hardware/arduino/*avr*/ - contains the definitions for the AVR-based Arduino boards
+  * hardware/arduino/avr/*boards.txt* - definitions of the AVR boards
+  * hardware/arduino/avr/*platform.txt* - definitions of the AVR build process
+  * hardware/arduino/avr/*cores/arduino*/ - the core providing the Arduino API for AVR boards
+  * hardware/arduino/*sam*/ - support for the ARM-based Arduino boards
+  * hardware/arduino/sam/*boards.txt* - definitions of the ARM boards
+  * hardware/arduino/sam/*platform.txt* - definitions of the ARM build process
+  * hardware/arduino/sam/*cores/arduino*/ - the core providing the Arduino API for ARM boards
+  * hardware/arduino/sam/*system*/... - this folder contains libraries provided from chip manufacturer, and linked through the build process defined in _platform.txt_
+
+Let's suppose we want to add two new cores for AVR: we should put them in the following place:
+  * hardware/arduino/avr/cores/*C*/ - a hypothetical core providing support for straight AVR C on Arduino boards
+  * hardware/arduino/avr/cores/*rtos*/ - a hypothetical core providing support for an RTOS on Arduino boards
 
 Note that the libraries sub-folder of the Arduino sketchbook folder will still be supported (for libraries not associated with specific hardware).
 
