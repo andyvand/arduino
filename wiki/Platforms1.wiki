@@ -52,7 +52,7 @@ The `boards.txt` file now allows the use of a core or variant from another packa
 The syntax is:
   * `BOARD.build.core = [`*`PACKAGE`*`:]`*`CORE`*
   * `BOARD.build.variant = [`*`PACKAGE`*`:]`*`VARIANT`*
-for example if we made a board called "xyz" that is Leonardo compatible we can simply create and entry in a 3rd-party `boards.txt` file like this:
+for example if we made a board called "xyz" that is Leonardo compatible we can simply create an entry in a 3rd-party `boards.txt` file like this:
 {{{
 xyz.build.code = arduino:arduino
 xyz.build.variant = arduino:leonardo
