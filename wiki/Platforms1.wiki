@@ -1,6 +1,8 @@
 #summary An overview of the platform architecture proposed for Arduino 1.5
 
-*An overview of the platform architecture proposed for Arduino 1.5*
+=An overview of the platform architecture proposed for Arduino 1.5=
+
+==Base layout==
 
 The hardware folder is split into multiple levels of organization:
 
@@ -24,7 +26,7 @@ all these files targets the containing platform but its possible to reference ot
 
 To update an existing 1.0 core you need to move all files contained in `hardware/_CORE_/` to a new `hardware/_CORE_/avr/` folder and update some definitions inside `boards.txt` file (a migration page will be available once the core format specification stabilizes).
 
-*Example*
+===Example===
 
 If the Arduino hardware folder were installed as third-party hardware folder, it would be organized like this:
   * `hardware/`*`arduino/`* - the root for the Arduino hardware
@@ -44,7 +46,7 @@ Let's suppose we want to add two new cores for AVR, we should put them in the fo
   * `hardware/arduino/avr/cores/`*`C`*`/` - a hypothetical core providing support for straight AVR C on Arduino boards
   * `hardware/arduino/avr/cores/`*`rtos`*`/` - a hypothetical core providing support for an RTOS on Arduino boards
 
-*How to use core/variant from another packager*
+==How to use core/variant from another packager==
 
 The `boards.txt` file now allows the use of a core or variant from another packager (without the need to provide another copy of such core/variant).
 The syntax is:
@@ -63,7 +65,7 @@ xyz.build.variant = xyz
 
 the referred core/variant may be within another package, but not a different platform (i.e. you can't have an ARM boards.txt file that refers to an AVR core).  _PACKAGE_ is optional, if omitted, the _CORE_ or _VARIANT_ value is assumed to be within the same package as the boards.txt file. 
 
-*Build process*
+==Build process==
 
 The build process has been broken out into a configuration file called *`platforms.txt`*. Now is possible to customize such process without the need to hack the IDE's java source code. Let's see the content of this file.
 
@@ -80,9 +82,9 @@ The third part is the _tools_ section. Here we define the tools that are used to
 The main defined _actions_ for each tools are:
   * *`upload`*: this action is used when the user "upload a sketch"
   * *`program`*: this action is used when the user "upload a sketch using a programmer"
-  * `*erase`* and *`bootloader`*: these actions are used when the user "burn a bootloader"
+  * *`erase`* and *`bootloader`*: these actions are used when the user "burn a bootloader"
 
-*What about libraries?*
+==What about libraries?==
 
 Assuming `PACKAGE` and `PLATFORM` are the package and platform for the selected board, the IDE will search for libraries inside the following folders (in order of priority):
 
@@ -92,9 +94,30 @@ Assuming `PACKAGE` and `PLATFORM` are the package and platform for the selected 
 
 Note that the libraries in folder 1. are available only when the specific platform and package are selected, while the other libraries are always available even if the currently selected CPU architecture is incompatible.
 
-*How can I make a 3rd party library for multiple architecure?*
+==Fat (multiplatform) libraries==
 
+How can I make a 3rd party library for multiple architecure?
 
+First you must put an empty file called `library.properties` inside the library root folder. The Arduino IDE looks for this file and if found handles the library as a "fat" (multi-platform) library.
 
-Questions:
+Second, you must create a folder for every architecure you are going to support.
+For example a Servo fat-library will have the following layout:
+
+ * *`Servo/`*
+ * `Servo/`*`avr`*`/...` - AVR implementation
+ * `Servo/`*`sam`*`/...` - ARM implementation
+ * `Servo/`*`xxxx`*`/...` - xxxx architecture implementation
+ * `Servo/`*`examples`*`/...` - Examples, valid for all architecture
+ * `Servo/`*`library.properties`* - empty file
+
+When the user chooses a board the IDE automatically selects the correct library implementation for the board's architecture. If there isn't such implementation the library will be ignored.
+
+The examples are shown only if the library has an implementation for the currently selected board architecture.
+
+The packagers should agree on a common name for every available architecture.
+
+The `library.properties` file is currently empty, it's here to give a safe way to detect fat libraries against non-fat libraries. The content of this file is reserved for future extensions.
+
+==Open questions==
+
   * What about core files that are shared between platforms (e.g. String, Stream)?  Where do they go?
