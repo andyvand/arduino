@@ -1,5 +1,10 @@
 #summary Building avrdude for Arduino.
 
+= ATTENTION =
+
+this page is out of date please refer to:
+https://github.com/arduino/Arduino/wiki/Building-avrdude-for-Arduino
+
 = Mac OS X =
 
 This was done on Mac OS X 10.7.1 (Lion) using Xcode 3.2.6 (installed in /Developer-old).
