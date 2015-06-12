@@ -1,3 +1,10 @@
+= ATTENTION =
+_This documentation is out of date please refer to:_
+
+*https://github.com/arduino/Arduino/wiki/Building-Arduino*
+
+
+
 #summary The process the Arduino environment (1.0.x) uses to build a sketch.
 
 = Overview =
