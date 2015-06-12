@@ -1,3 +1,8 @@
+= ATTENTION =
+
+This page is out of date. Please refer to:
+https://github.com/arduino/Arduino/wiki/Git-Guide-for-Arduino
+
 =Git and Github guide for Arduino Development=
 
 Install git locally and create an account on github
