@@ -1,5 +1,10 @@
 #summary Instructions for building the Arduino development environment from source.
 
+= ATTENTION =
+_This documentation is out of date please refer to:_
+
+*https://github.com/arduino/Arduino/wiki/Building-Arduino*
+
 = Steps for First Time Setup =
 
 == 1. Install Development Tools ==
