@@ -1,5 +1,9 @@
 #summary principles and processes for the development of the Arduino software
 
+= ATTENTION =
+Please note that this page is out of date. Please refer to:
+https://github.com/arduino/Arduino/wiki/Development-Policy
+
 = Philosophy =
 
 Arduino aims to make technology accessible and useful to new audiences such as artists, designers, or hobbyists.  The development efforts focus on that which allows people to get their work done.  To that end, it strives for the dual goals of simplicity (so people can actually use the platform) and robustness (so they create things that work).  It also attempts to provide a well-designed, maintainable, and stable platform for the future.
