@@ -3,7 +3,7 @@
 = ATTENTION =
 _This documentation is out of date please refer to:_
 
-*https://github.com/arduino/Arduino/wiki/Building-Arduino*
+https://github.com/arduino/Arduino/wiki/Building-Arduino
 
 = Steps for First Time Setup =
 
