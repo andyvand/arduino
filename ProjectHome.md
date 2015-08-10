@@ -1,0 +1,9 @@
+Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It's intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.  This Google Code project is the home for the development of the Arduino platform.  For more information on _using_ Arduino, see the [Arduino homepage](http://www.arduino.cc/).
+
+The Arduino software consists of a development environment (IDE) and the core libraries.  The IDE is written in Java and based on the [Processing](http://processing.org/) development environment.  The core libraries are written in C and C++ and compiled using avr-gcc and AVR Libc.  The [source code for Arduino](http://github.com/arduino/Arduino) is now hosted on GitHub.
+
+If you are interested in helping develop the Arduino software, please see the [development policy](http://code.google.com/p/arduino/wiki/DevelopmentPolicy) document.  It outlines our basic philosophy and some practical aspects of contributing to the process.
+
+To report a bug in or suggest a change to the Arduino software, please post to the [issues list](http://code.google.com/p/arduino/issues/list) (or, if you prefer, the [Suggestions forum](http://arduino.cc/forum/index.php/board,21.0.html)). To receive an email containing updates to the issues, subscribe to the [issues mailing list](http://arduino.cc/mailman/listinfo/issues_arduino.cc).
+
+Potential changes to the Arduino software (environment or core libraries) are discussed on the [developers mailing list](http://mail.arduino.cc/mailman/listinfo/developers_arduino.cc) ([archives](http://arduino.cc/pipermail/developers_arduino.cc/)).
